@@ -1,0 +1,10 @@
+package review_ex;
+
+public class Father extends GrandFather {
+	public Father() {
+		System.out.println("Father »ý¼ºÀÚ");
+	}
+	public String fatherMethod() {
+		return "FatherMethod";
+	}
+}
