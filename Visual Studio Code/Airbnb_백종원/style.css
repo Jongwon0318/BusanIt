@@ -1,0 +1,788 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+html,
+body {
+  height: 100%;
+  overflow: auto;
+}
+body {
+  font-family: Circular, -apple-system, BlinkMacSystemFont;
+}
+/* 화면시작 */
+.main-page {
+  margin-left: 0px;
+  width: 100%;
+  height: 100%;
+  background: url(images/background.jpg);
+  background-repeat: no repeat;
+  background-size: cover;
+}
+.main-navi {
+  padding: 30px;
+  height: 110px;
+  width: 100%;
+  display: flex;
+}
+.main-navi .item > a {
+  font-size: 14px;
+  font-weight: 800;
+  color: white;
+  text-decoration: none;
+}
+.main-navi .item {
+  margin-left: 20px;
+}
+.main-navi .Logo {
+  font-size: 35px;
+  height: 900px;
+  justify-self: left;
+}
+.main-navi .itemsflex {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+}
+.main-navi .svgLogo:hover {
+  cursor: pointer;
+}
+
+.item:hover {
+  cursor: pointer;
+  border-bottom: 2px solid white;
+}
+/* Main form */
+.main-form {
+  background-color: white;
+  margin-left: 6.5%;
+  margin-top: 1%;
+  padding: 32px 32px 24px 32px;
+  width: 441px;
+  border-radius: 4px;
+  overflow: hidden;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.12);
+}
+.title {
+  font-weight: bolder;
+  font-size: 30px;
+  color: #484848;
+  line-height: 35px;
+}
+.destinationdiv {
+  margin-top: 5%;
+  font-size: 12px;
+  font-weight: bold;
+}
+.destination {
+  border: 1px solid #e4e4e4;
+  margin-top: 10px;
+  width: 100%;
+  height: 47px;
+}
+.destination:focus {
+  outline: none;
+  border: 1px solid #008489;
+}
+.check {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-size: 12px;
+  font-weight: bold;
+  display: grid;
+  grid-template-columns: repeat(1, 6fr 0fr 5fr);
+}
+.checkinboxdiv {
+  display: inline-grid;
+  grid-template-columns: repeat(1, 200px 1px 176px);
+  height: 47px;
+}
+.checkinbox:focus {
+  outline-color: #008489;
+}
+.checkoutbox:focus {
+  outline-color: #008489;
+}
+
+.personnal {
+  border-radius: 5px;
+  border: 1px solid #e4e4e4;
+  color: #484848;
+  font-size: 17px;
+  padding-top: 10px;
+  padding-left: 10px;
+  margin-top: 10px;
+  width: 100%;
+  height: 50px;
+  background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRCvLf8-nDSjdc3tyq98-QvaM17gcdrkEP36WwBp0UJdGPzFMnv);
+  background-repeat: no-repeat;
+  background-position-x: 97%;
+  background-position-y: center;
+  background-size: 15px;
+}
+.personnaldiv {
+  display: inline-block;
+  width: 100%;
+}
+.personnaldiv:hover {
+  cursor: pointer;
+}
+.searchbuttondiv {
+  height: 10%;
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+}
+#searchbutton {
+  border-radius: 5px;
+  border: none;
+  color: white;
+  margin-top: 22px;
+  width: 21%;
+  height: 10%;
+  padding: 15px;
+  font-size: 16px;
+  text-align: center;
+  background-color: #ff5a5f;
+  font-weight: bold;
+}
+#searchbutton:hover {
+  cursor: pointer;
+}
+.bottom-text {
+  font-size: 14px;
+  text-align: right;
+  position: relative;
+  right: 2%;
+  bottom: -33%;
+  color: white;
+  font-weight: bold;
+  z-index: 1;
+}
+.bottom-text:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+/* 시작화면 끝 */
+/* 회원가입 화면 */
+html,
+body {
+  width: 100%;
+  height: 100%;
+  margin: 0 auto;
+}
+.join-popup {
+  display: none;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #000000d8;
+  z-index: 9;
+}
+.join-window {
+  width: 48%;
+  height: 37%;
+  padding: 20px;
+  background-color: white;
+  /* 화면 정 가운데 오게 한다. */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-top: -18%;
+  margin-left: -24%;
+}
+.join-popup .form {
+  width: 95%;
+  height: 20%;
+  padding: 3px;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+.join-popup .fbook-login {
+  padding: 10px 4px;
+  border: 2px solid #4568b2;
+  background-color: #4568b2;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.join-popup .fbook-login:hover {
+  cursor: pointer;
+}
+.join-popup .google-login {
+  padding: 10px 4px;
+  border: 2px solid #767676;
+  background-color: white;
+  color: #484848;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.join-popup .google-login:hover {
+  cursor: pointer;
+}
+
+.join-popup .line-combo {
+  display: flex;
+  text-align: center;
+  margin-bottom: 10px;
+}
+.join-popup .line-combo > span {
+  font-size: 14px;
+  font-weight: 800;
+  color: #767676;
+}
+.join-popup .line-left {
+  margin-bottom: 11px;
+  width: 210px;
+  border-bottom: 1px solid #e4e4e4;
+}
+.join-popup .line-right {
+  margin-bottom: 11px;
+  width: 210px;
+  border-bottom: 1px solid #e4e4e4;
+}
+.join-popup .email-login {
+  padding: 10px 4px;
+  border: 2px solid #ff5a5f;
+  background-color: #ff5a5f;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+.join-popup .email-login:hover {
+  cursor: pointer;
+}
+.join-popup .AskingAccount {
+  font-size: 16px;
+  align-self: left;
+  display: flex;
+}
+.join-popup .login {
+  text-decoration: none;
+  color: lightseagreen;
+}
+.join-popup .login:hover {
+  cursor: pointer;
+  text-decoration: underline;
+}
+.close-button {
+  margin-left: 5px;
+  font-size: 40px;
+  color: darkgray;
+  margin-bottom: 20px;
+  align-self: flex-start;
+}
+.close-button:hover {
+  cursor: pointer;
+}
+.join-popup .line-full {
+  margin-bottom: 11px;
+  width: 94%;
+  border-bottom: 1px solid #e4e4e4;
+}
+/* 회원가입화면 끝 */
+
+/* 로그인 화면 */
+
+.join-popup_login {
+  display: none;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #000000d8;
+  z-index: 9;
+}
+.join-window_login {
+  width: 48%;
+  height: 57%;
+  padding: 10px 20px 20px 20px;
+  background-color: white;
+  /* 화면 정 가운데 오게 한다. */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-top: -23%;
+  margin-left: -23%;
+}
+.join-popup_login .form_login {
+  width: 95%;
+  height: 15%;
+  padding: 3px;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+.join-popup_login .fbook-login_login {
+  padding: 10px 4px;
+  border: 2px solid #4568b2;
+  background-color: #4568b2;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.join-popup_login .fbook-login_login:hover {
+  cursor: pointer;
+}
+.join-popup_login .google-login_login {
+  padding: 10px 4px;
+  border: 2px solid #767676;
+  background-color: white;
+  color: #484848;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.join-popup_login .google-login_login:hover {
+  cursor: pointer;
+}
+.join-popup_login .line-combo_login {
+  display: flex;
+  text-align: center;
+  margin-top: 9px;
+  margin-bottom: 12px;
+}
+.join-popup_login .line-combo_login > span {
+  font-size: 14px;
+  font-weight: 800;
+  color: #767676;
+}
+.join-popup_login .line-left_login {
+  margin-bottom: 11px;
+  width: 210px;
+  border-bottom: 1px solid #e4e4e4;
+}
+.join-popup_login .line-right_login {
+  margin-bottom: 11px;
+  width: 210px;
+  border-bottom: 1px solid #e4e4e4;
+}
+.join-popup_login .email-login_login {
+  padding: 10px 4px;
+  border: 2px solid #ff5a5f;
+  background-color: #ff5a5f;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+.join-popup_login .email-login_login:hover {
+  cursor: pointer;
+}
+.join-popup_login .AskingAccount_login {
+  font-size: 15px;
+  align-self: left;
+  display: flex;
+}
+.join-popup_login .login_login {
+  text-decoration: none;
+  color: #008489;
+}
+.join-popup_login .login_login:hover {
+  cursor: pointer;
+  text-decoration: underline;
+}
+.close-button_login {
+  margin-left: 5px;
+  font-size: 40px;
+  color: darkgray;
+  margin-bottom: 10px;
+  align-self: flex-start;
+  font-weight: lighter;
+}
+.close-button_login:hover {
+  cursor: pointer;
+}
+
+.aboutpwd .pwdbox {
+  border: 1px solid #e4e4e4;
+  width: 17px;
+  height: 17px;
+  margin-right: 7px;
+}
+.pwdbox:hover {
+  cursor: pointer;
+}
+.showpwd {
+  color: #008489;
+  font-size: 14px;
+  justify-self: right;
+}
+.showpwd:hover {
+  cursor: pointer;
+  text-decoration: underline;
+}
+.aboutpwd {
+  padding-left: 14px;
+  padding-right: 14px;
+  width: 100%;
+  margin-top: 8px;
+  display: flex;
+  justify-content: space-between;
+  font-size: 15px;
+}
+.phonelogin_asking {
+  width: 95%;
+  display: flex;
+  font-size: 14px;
+}
+.telnumlog .pwdasking {
+  color: #008489;
+  font-weight: bold;
+}
+.telnumlog:hover {
+  cursor: pointer;
+  text-decoration: underline;
+}
+.pwdasking:hover {
+  cursor: pointer;
+  text-decoration: underline;
+}
+.join-popup_login .line-full_login {
+  margin-bottom: 11px;
+  width: 94%;
+  border-bottom: 1px solid #e4e4e4;
+}
+.join-window_login .email_address:focus {
+  outline: none;
+  border: 1px solid #008489;
+}
+.join-window_login .password_confirm:focus {
+  outline: none;
+  border: 1px solid #008489;
+}
+.join-window_login .email_address {
+  height: 150px;
+  width: 95%;
+  padding-left: 10px;
+  font-size: 16px;
+  font-weight: 500;
+  border: 1px solid #e4e4e4;
+  color: #767676;
+  display: flex;
+  justify-content: left;
+  background-size: 20px;
+  background-repeat: no-repeat;
+  background-position-x: 98%;
+  background-position-y: center;
+  background-image: url(images/emailimg.png);
+}
+.join-window_login .password_confirm {
+  height: 150px;
+  width: 95%;
+  padding-left: 10px;
+  font-size: 16px;
+  font-weight: 500;
+  border: 1px solid #e4e4e4;
+  color: #767676;
+  display: flex;
+  justify-content: left;
+  background-size: 20px;
+  background-repeat: no-repeat;
+  background-blend-mode: darken;
+  background-position-x: 98%;
+  background-position-y: center;
+  background-image: url(images/pwdimg.png);
+}
+
+input[type="checkbox"] {
+  display: none;
+}
+
+input[type="checkbox"] + label {
+  cursor: pointer;
+  padding-left: 25px;
+}
+
+input[type="checkbox"] + label:before {
+  content: "";
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+  position: absolute;
+  left: 0;
+  background-color: white;
+  border-radius: 2px;
+  border: 1px solid #e4e4e4;
+}
+
+input[type="checkbox"]:checked + label:before {
+  content: "\2714";
+  font-size: 15px;
+  font-weight: 400;
+  color: #fff;
+  background: #008489;
+  text-align: center;
+}
+
+/* 로그인화면 끝 */
+/*   Main page 끝      */
+/*   Sub page 시작      */
+.look-around {
+  margin-top: 30px;
+  padding: 0 8%;
+}
+/* 둘러보기시작 */
+.picture {
+  width: 52%;
+  height: 100%;
+  margin-right: 0px;
+}
+.sub-page .text-1 {
+  margin-left: 8px;
+  margin-bottom: 15px;
+  font-size: 24px;
+  font-weight: 800;
+}
+
+.sub-page .text-2 {
+  font-size: 16px;
+  font-weight: 800;
+  color: #484848;
+}
+
+.look-around > .wrapper {
+  display: flex;
+}
+.home:hover {
+  cursor: pointer;
+}
+.experience:hover {
+  cursor: pointer;
+}
+.adventure:hover {
+  cursor: pointer;
+}
+.look-around > .wrapper > div {
+  display: flex;
+  position: relative;
+  height: 80%;
+  width: 110%;
+  margin: 10px;
+  border-radius: 10px;
+  background-color: white;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  box-shadow: rgba(0, 0, 0, 0.06) 0px 8px 12px 0px;
+}
+.look-around > .wrapper > div > .text {
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+/* 둘러보기끝 */
+/* 요리경험시작 */
+.cookingbgr {
+  background: url(https://a0.muscache.com/im/pictures/cf069ce3-f88f-4aaf-b37d-4855d85440ac.jpg);
+  margin-left: 0px;
+  height: 455px;
+  background-repeat: no repeat;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+
+  color: white;
+  padding-left: 10%;
+}
+.cookingline {
+  font-size: 15px;
+  font-weight: 600;
+  margin-top: 100px;
+  margin-bottom: 20px;
+}
+.cookingtitle {
+  font-size: 50px;
+  font-weight: bolder;
+  margin-bottom: 15px;
+}
+.cookinglow {
+  font-size: 20px;
+  margin-bottom: 40px;
+}
+.specifically {
+  width: 17%;
+  height: 11%;
+  padding: 10px 5px;
+  background-color: white;
+  border-radius: 5px;
+  color: black;
+  border: none;
+  font-size: 16px;
+  font-weight: bold;
+}
+.specifically:hover {
+  cursor: pointer;
+}
+/* 요리경험 끝 */
+/* 어드벤쳐시작 */
+.airbnbadventure {
+  margin-top: 30px;
+  padding: 0 8%;
+}
+.advgrid img {
+  width: 182px;
+  height: 240px;
+  border-radius: 3px;
+}
+.advlo:hover {
+  cursor: pointer;
+}
+.advgrid {
+  width: 80%;
+  display: grid;
+  grid-template-columns: repeat(1, 23.5% 23.5% 23.5% 23.5% 23.5%);
+  grid-template-rows: 45%;
+  grid-gap: 2%;
+}
+.conname {
+  font-size: 13px;
+  color: #484848;
+  font-weight: 600;
+}
+.advex {
+  font-size: 16px;
+  color: #484848;
+  font-weight: bold;
+}
+.charge {
+  margin-top: 3px;
+  font-size: 14px;
+  color: #484848;
+  text-align: left;
+}
+.starspan {
+  font-size: 12px;
+}
+.advlink {
+  padding: 5px;
+  text-decoration: none;
+  font-size: 17px;
+  color: #008489;
+  font-weight: bold;
+}
+.advlink:hover {
+  text-decoration: underline;
+}
+/* 어드벤쳐 끝 */
+/* 에어비엔비 플러스 숙소 시작 */
+.airbnbplus {
+  margin-top: 30px;
+  padding: 0 8%;
+}
+.airbnbplusbackground {
+  background: url(
+      https://a0.muscache.com/4ea/air/v2/pictures/ea6285d9-5352-4447-b13d-b39bfc92dfe5.jpg?t=c:w1131-h343,
+      r:w1131-h343-sfit,
+      e:fjpg-c75
+    )
+    repeat;
+  width: 100%;
+  height: 340px;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.airbnbplusbut {
+  border: none;
+  font-size: 11px;
+  color: #484848;
+  background-color: white;
+  padding: 15px 20px;
+  border-radius: 5px;
+  font-weight: bold;
+}
+.airbnbplusbut:hover {
+  cursor: pointer;
+}
+/* 에어비엔비 플러스 숙소 끝 */
+/* 최고 평점을 받은 숙소 시작 */
+.bestgrade {
+  margin-top: 30px;
+  padding: 0 8%;
+}
+.container11 {
+  width: 100%;
+  height: 65%;
+  border: 1px solid white;
+  display: grid;
+
+  grid-template-columns: repeat(1, 23.5% 23.5% 23.5% 23.5%);
+  grid-template-rows: 230px 230px 30px;
+  grid-gap: 20px;
+}
+.air {
+  color: #484848;
+}
+.air:hover {
+  cursor: pointer;
+}
+.air img {
+  width: 100%;
+  height: 70%;
+  border-radius: 5px;
+}
+.link11 {
+  padding: 5px;
+  text-decoration: none;
+  font-size: 17px;
+  color: #008489;
+  font-weight: bold;
+}
+.link11:hover {
+  text-decoration: underline;
+}
+.superhost {
+  font-size: 12px;
+  background-color: white;
+  border: 1px solid black;
+  color: black;
+  border-radius: 5px;
+}
+.PLUShost {
+  background-color: darkred;
+  color: white;
+  border-radius: 5px;
+  border: none;
+  font-size: 12px;
+}
+.explain {
+  color: grey;
+  font-size: 14px;
+}
+.star {
+  color: red;
+}
+.explanation {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 30% 35% 30%;
+  grid-gap: 2%;
+}
+.right {
+  place-self: end;
+  font-size: 14px;
+}
+.line-height {
+  line-height: 30px;
+}
+/* 최고 평점을 받은 숙소 끝 */

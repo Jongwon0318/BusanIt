@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>cssPositionex3</title>
+    <style>
+        * {
+          box-sizing: border-box;
+        }
+
+        body {
+          font-family: "Open Sans";
+          color: rgba(black, .85);
+          background: #f2f2f2;
+          margin: 0;
+          display: flex;
+          justify-content: center;
+        }
+
+        div.spacer {
+          position: fixed;
+          height: 120px;
+          width: 100%;
+          margin: 0 auto;
+          background-color: #f2f2f2;
+        }
+
+        nav {
+          position: fixed;
+          width: 660px;
+          margin: 60px auto 0;
+          z-index: 10;
+        }
+        nav p {
+            font-size: 16px;
+            font-weight: 600;
+            margin: 0;
+            background-color: #262626;
+            flex: 1;
+            padding: 30px;
+            color: white;
+        }
+
+        code {
+          margin: 30px 0 0 0;
+          background-color: #eee;
+          border: 1px solid #999;
+          display: block;
+          padding: 20px;
+        }
+
+        h1 {
+          font-family: "bodoni-urw";
+          color: rgba(teal, .85);
+          font-weight: normal;
+          font-size: 32px;
+          font-weight: 600;
+          margin: 0 0 20px 0;
+        }
+
+        div.site {
+          width: 100%;
+          min-width: 320px;
+          max-width: 660px;
+          padding: 30px;
+          margin: 0 auto 60px;
+          background-color: white;
+          box-shadow: 0 4px 8px rgba(black, .25);
+          z-index: -1;
+        }
+
+        div.text {
+          position: relative;
+          max-width: 600px;
+          margin: 0 auto 30px;
+          background-color: white;
+        }
+
+        div.first {
+          margin: 140px 0 60px 0;
+        }
+
+        .container {
+          position: relative;
+          width: 100%;
+          max-width: 600px;
+          height: 400px;
+          background-color: lightgray;
+          margin: 0 auto 60px;
+        }
+
+        .container:last-child {
+          margin: 0 0 30px;
+        }
+
+        .child {
+          width: 200px;
+          height: 100px;
+          border-style: none;
+        }
+
+        .float-left {
+          float: left;
+        }
+
+        .green {
+          background-color: green;
+        }
+
+        .blue {
+          background-color: blue;
+        }
+
+        .red {
+          background-color: red;
+        }
+
+        .clear {
+          clear: both;
+        }
+
+        .clear-left {
+          clear: left;
+        }
+
+        .float-right {
+          float: right;
+        }
+
+        .relative-plus-styles {
+          position: relative;
+          top: 50px;
+          left: 20px;
+        }
+
+        .relative {
+          position: relative;
+        }
+
+        .absolute-plus-styles {
+          position: absolute;
+          top: 50px;
+          left: 20px;
+        }
+
+        .margin-padding {
+          margin: 0 0 50px 0;
+        }
+
+        .white {
+          background-color: white;
+          border: none;
+        }
+
+        .fixed {
+          position: fixed;
+          top: 400px;
+          right: 100px;
+        }
+
+        .small {
+          width: 40px;
+          height: 40px;
+        }
+
+        p {
+          max-width: 800px;
+        }
+      </style>
+</head>
+<body>
+    <div class="spacer"></div>
+    <nav>
+      <p>CSS 포지셔닝</p>
+    </nav>
+    <div class="site">
+      <div class="text first">
+        <h1>Fixed Position</h1>
+        <p>Fixed 포지션은 항상 정해진 위치에 고정됩니다. 위쪽의 CSS 포지셔닝을 포함하는 nav 박스가 fixed 포지션으로 선언 되었습니다. 마우스 스크롤의 조작에 상관없이 화면 상단에 고정됩니다.
+        </p>
+      </div>
+    
+      <div class="text">
+        <h1>Absolute Position</h1>
+        <p>앱솔루트 포지션으로 요소를 선언하면 부모요소의 위치로부터 포지션을 지정합니다.  <b>부모요소</b>는 항상 포지션이 relative 여야 합니다. 그렇지 않으면 상위의 Body 태그에 맞추게 됩니다. </p>
+        <p>앱솔루트 포지션 요소는 다른 요소가 패딩/마진에 영향을 받지 않습니다.</p>
+        <p>In this example, the red square has <i>position: absolute</i>, which means it will be absolutely positioned to it's parent container, which is the gray container. With the CSS to translate the box 50px from the top, and 20px from the left, this means
+          the red box will move that much away from the top left corner of the gray container.</p>
+        <code>
+        .absolute-plus-styles { <br>
+          &nbsp;&nbsp; position: absolute; <br>
+          &nbsp;&nbsp; top: 50px; <br>
+          &nbsp;&nbsp; left: 20px; <br>
+        }
+      </code>
+      </div>
+    
+      <div class="container">
+        <div class="child blue"></div>
+        <div class="child red absolute-plus-styles"></div>
+        <div class="child green"></div>
+      </div>
+    
+      <div class="text">
+        <h1>
+          Relative Position</h1>
+        <p>상대위치 포지션은 기존의 위치에서 좌표값만큼 이동합니다. 다른 요소들도 기존의 위치에 영향을 받습니다.</p>
+        <p>In this example, notice how we are using the same styles to translate our element like in the above example, but this element has been translated from it's <i>relative</i> position (see what I did there?)</p>
+        <code>
+        .relative-plus-styles { <br>
+          &nbsp;&nbsp; position: relative; <br>
+          &nbsp;&nbsp; top: 50px; <br>
+          &nbsp;&nbsp; left: 20px; <br>
+        }
+      </code>
+      </div>
+    
+      <div class="container">
+        <div class="child blue"></div>
+        <div class="child red relative-plus-styles"></div>
+        <div class="child green"></div>
+      </div>
+    
+      <div class="text">
+        <h1>Float and Clear</h1>
+        <p>We can position elements to start from the left or right side of the window by using the <i>float</i> property. The float CSS property places an element on the left or right side of its container, allowing text and inline elements to wrap around it.
+          The element is removed from the normal flow of the page, though still remaining a part of the flow (in contrast to absolute positioning).</p>
+        <br>
+        <p>
+          <b>Example 1A: 레드 박스를 오른쪽으로 Float 했을때</b>
+        </p>
+        <p>Let's see what happens when we float our red box to start from the right side of the screen, without clearing the element below it.</p>
+      </div>
+    
+      <div class="container">
+        <div class="child blue"></div>
+        <div class="child red float-right"></div>
+        <div class="child green"></div>
+      </div>
+    
+      <div class="text">
+        <p>
+          <b>Example 1B: 레드박스 오른쪽 float 하고, 아래박스를 clear 햇을때 </b>
+        </p>
+        <p>Let's see what happens when we float our red box to start from the right side of the screen, and clear the element below it.</p>
+      </div>
+    
+      <div class="container">
+        <div class="child blue"></div>
+        <div class="child red float-right"></div>
+        <div class="child green clear"></div>
+      </div>
+    
+      <div class="text">
+        <p>
+          <b>Example 2A: 레드박스를 왼쪽 float 했을때.</b>
+        </p>
+        <p>In the example below we're going to float the red box left, just for fun. If you don't <b>"clear"</b> the element below it, the element you're floating left will <i>float</i> on top of it (see what I did there?)</p>
+        <p>Now our green box is gone.</p>
+      </div>
+    
+      <div class="container">
+        <div class="child blue"></div>
+        <div class="child red float-left"></div>
+        <div class="child green"></div>
+      </div>
+    
+      <div class="text">
+        <p><b>Example 2B: 레드박스를 왼쪽 float 하고 녹색박스를 클리어</b></p>
+        <p>
+          Let's clear the element below (the green box) so that it appears. When clearing, you can clear the left, right or both sides. By default it clears nothing! Let's clear the left side.
+        </p>
+      </div>
+    
+      <div class="container">
+        <div class="child blue float-left"></div>
+        <div class="child red clear-left"></div>
+        <div class="child green"></div>
+      </div>
+    </div>
+</body>
+</html>

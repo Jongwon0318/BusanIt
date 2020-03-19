@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- 위 3개의 메타 태그는 head 태그의 처음에 와야합니다 -->
+
+    <title>Tables</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <style>
+      /* CSS작성 */
+      body {
+        margin: 0;
+        padding: 0;
+        z-index: -2;
+        background: linear-gradient(45deg, red, blue);
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+      }
+      #background {
+        margin: 0;
+        padding: 0;
+        position: absolute;
+        z-index: -1;
+        display: none;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: cover;
+        /**scalable background to fill available viewport**/
+        background: linear-gradient(45deg, red, blue);
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+      }
+      #table {
+        border: 1px solid white;
+      }
+      a {
+        text-decoration: none;
+        color: white;
+      }
+      a:hover {
+        text-decoration: underline;
+        color: white;
+      }
+      tr.detail {
+        display: none;
+        width: 100%;
+      }
+      tr.detail div {
+        display: none;
+      }
+      .showmore:hover {
+        cursor: pointer;
+      }
+      .detail{
+        background: rgba(0, 0, 0, 0.26);
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- HTML 작성 -->
+    <div id="background">
+      <div class="text-center">
+        <h1 class="text-white mt-5" id="folder">Folders</h1>
+      </div>
+      <br /><br /><br />
+      <div align="center">
+        <form action="tablesPro.jsp">
+          <table id="table" class="table">
+            <thead class="text-white text-center">
+              <tr>
+                <th>
+                  NO
+                </th>
+                <th>
+                  NAME
+                </th>
+                <th>
+                  DATE
+                </th>
+                <th>
+                  MORE
+                </th>
+              </tr>
+            </thead>
+            <tbody class="text-white text-center">
+              <tr>
+                <td>1</td>
+                <td><a href="#">20191115</a></td>
+                <td>2019-11-15</td>
+                <td><a class="showmore" href="">Show More</a></td>
+              </tr>
+              <tr class="detail">
+                <td colspan="4">
+                  <div>
+                    <table class="table">
+                      <tr>
+                        <td>
+                          <a href="20191115/기본문서.html">기본문서.html</a>
+                        </td>
+                        <td>
+                          <a href="20191115/hello.html">hello.html</a>
+                        </td>
+                        <td>
+                          <a href="20191115/naver.html">naver.html</a>
+                        </td>
+                      </tr>
+                    </table>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td>2</td>
+                <td><a href="#">20191120</a></td>
+                <td>2019-11-20</td>
+                <td><a class="showmore" href="">Show More</a></td>
+              </tr>
+              <tr class="detail">
+                <td colspan="4">
+                  <div>
+                    <table class="table">
+                      <tr>
+                        <td>
+                          <a href="20191120/특수문자.html">특수문자.html</a>
+                        </td>
+                        <td>
+                          <a href="20191120/Block&Inline.html"
+                            >Block&Inline.html</a
+                          >
+                        </td>
+                        <td>
+                          <a href="20191120/ExplainingList.html"
+                            >ExplainingList.html</a
+                          >
+                        </td>
+                        <td>
+                          <a href="20191120/ExplainingList_ex1.html"
+                            >ExplainingList_ex1.html</a
+                          >
+                        </td>
+                        </tr>
+                        <tr></tr>
+                        <td><a href="20191120/index.html">index.html</a></td>
+                        <td><a href="20191120/List.html">List.html</a></td>
+                        <td>
+                          <a href="20191120/List_ex1.html">List_ex1.html</a>
+                        </td>
+                        <td>
+                          <a href="20191120/Pictures.html">Pictures.html</a>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td><a href="20191120/Quiz_1.html">Quiz_1.html</a></td>
+                        <td><a href="20191120/Quiz_2.html">Quiz_2.html</a></td>
+                        <td><a href="20191120/Table.html">Table.html</a></td>
+                        <td>
+                          <a href="20191120/table_ex1.html">table_ex1.html</a>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <a href="20191120/table_ex2.html">table_ex2.html</a>
+                        </td>
+                        <td>
+                          <a href="20191120/table_ex3.html">table_ex3.html</a>
+                        </td>
+                        <td><a href="20191120/Tag.html">Tag.html</a></td>
+                        <td>
+                          <a href="20191120/Tag_ex1.html">Tag_ex1.html</a>
+                        </td>
+                      </tr>
+                      </tr>
+                    </table>
+                  </div>
+                </td>
+              </tr>
+              
+              <tr>
+                <td>3</td>
+                <td><a href="#">Airbnb_백종원</a></td>
+                <td>2020-01-10</td>
+                <td><a class="showmore" href="">Show More</a></td>
+              </tr>
+              <tr class="detail">
+                <td colspan="4">
+                  <div>
+                    <table class="table">
+                      <tr>
+                        <td>
+                          <a href="Airbnb_백종원/Index.html">index.html</a>
+                        </td>
+                      </tr>
+                    </table>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td>4</td>
+                <td><a href="#">JQuery</a></td>
+                <td>2020-01-13</td>
+                <td><a class="showmore" href="">Show More</a></td>
+              </tr>
+              <tr class="detail">
+                <td colspan="4">
+                  <div>
+                    <table class="table">
+                      <tr>
+                        <td>
+                          <a href="JQuery/bsCard.html">bsCard.html</a>
+                        </td>
+                        <td>
+                          <a href="JQuery/bsCardEx.html"
+                            >bsCardEx.html</a
+                          >
+                        </td>
+                        <td>
+                          <a href="JQuery/bsColors.html"
+                            >bsColors.html</a
+                          >
+                        </td>
+                        <td>
+                          <a href="JQuery/bsEx1.html"
+                            >bsEx1.html</a
+                          >
+                        </td>
+                      </tr>
+                      <tr>
+                        <td><a href="JQuery/bsFlex.html">bsFlex.html</a></td>
+                        <td><a href="JQuery/bsFlexEx1.html">bsFlexEx1.html</a></td>
+                        <td>
+                          <a href="JQuery/bsFlexEx2.html">bsFlexEx2.html</a>
+                        </td>
+                        <td>
+                          <a href="JQuery/bsFloats.html">bsFloats.html</a>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td><a href="JQuery/bsGridSystem-ex.html">bsGridSystem-ex.html</a></td>
+                        <td><a href="JQuery/bsGridSystem.html">bsGridSystem.html</a></td>
+                        <td><a href="JQuery/bsJumboTron&Button.html">bsJumboTron&Button.html</a></td>
+                        <td>
+                          <a href="JQuery/bsList.html">bsList.html</a>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <a href="JQuery/bsMargin&Padding.html">bsMargin&Padding.html</a>
+                        </td>
+                        <td>
+                          <a href="JQuery/bsNavigationBar.html">bsNavigationBar.html</a>
+                        </td>
+                        <td><a href="JQuery/bsPageEx1.html">bsPageEx1.html</a></td>
+                        <td>
+                          <a href="JQuery/bsProgressBar&Tooltips.html">bsProgressBar&Tooltips.html</a>
+                        </td>
+                      </tr>
+                      <tr>
+                          <td>
+                              <a href="JQuery/bsTable.html">bsTable.html</a>
+                            </td>
+                            <td>
+                              <a href="JQuery/bsTableEx.html">bsTableEx.html</a>
+                            </td>
+                            <td><a href="JQuery/bsTypohoGraphy&Alignment.html">bsTypohoGraphy&Alignment.html</a></td>
+                            <td>
+                              <a href="JQuery/categories.html">categories.html</a>
+                            </td>
+                      </tr>
+                      <tr>
+                          <td>
+                              <a href="JQuery/JQueryAnimation.html">JQueryAnimation.html</a>
+                            </td>
+                            <td>
+                              <a href="JQuery/JQueryDOM.html">JQueryDOM.html</a>
+                            </td>
+                            <td><a href="JQuery/JQueryEvent.html">JQueryEvent.html</a></td>
+                            <td>
+                              <a href="JQuery/JQueryFade.html">JQueryFade.html</a>
+                            </td>
+                      </tr>
+                      <tr>
+                          <td>
+                              <a href="JQuery/JQuerySelector.html">JQuerySelector.html</a>
+                            </td>
+                            <td>
+                              <a href="JQuery/JQuerySlide&Animation.html">JQuerySlide&Animation.html</a>
+                            </td>
+                            <td><a href="JQuery/posts.html">posts.html</a></td>
+                      </tr>
+                    </table>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td>5</td>
+                <td><a href="#">Clipboard</a></td>
+                <td>2020-01-16</td>
+                <td><a class="showmore" href="">Show More</a></td>
+              </tr>
+              <tr class="detail">
+                <td colspan="4">
+                  <div>
+                    <table class="table">
+                      <tr>
+                        <td>
+                          <a href="JQuery/Clipboard/index.html">index.html</a>
+                        </td>
+                        <td>
+                          <a href="JQuery/Clipboard/login.html">login.html</a>
+                        </td>
+                      </tr>
+                    </table>
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </form>
+      </div>
+    </div>
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+
+
+    <script
+  src="https://code.jquery.com/jquery-3.4.1.js"
+  integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+  crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <script>
+      // 자바스크립트 작성
+      $(function() {
+        $("#background").fadeIn(1000);
+        setTimeout(function() {
+          $("#folder").slideUp(-100);
+          $("#folder").slideDown(1000);
+        });
+        setTimeout(function() {
+          $("#table").slideUp(-100);
+          $("#table").slideDown(2000);
+        });
+        //fadeIn rate in milliseconds.
+        //A higher number = slower fadeIn rate
+        $("a.showmore").click(function(e) {
+          e.preventDefault();
+      
+          // We break and store the result so we can use it to hide
+          // the row after the slideToggle is closed
+          
+            
+
+          var targetrow = $(this)
+            .closest("tr")
+            .next(".detail");
+          targetrow
+            .show()
+            .find("div")
+            .slideToggle("slow", function() {
+              if (!$(this).is(":visible")) {
+                targetrow.hide();
+              }
+
+            });
+        });
+      });
+      $(function() {});
+    </script>
+  </body>
+</html>

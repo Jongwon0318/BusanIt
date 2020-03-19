@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Overflow-y-table</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
+    <style>
+        th,td{
+            padding: 10px;
+            text-align: left;
+            border-right: 1px solid #ddd;
+            border-bottom: 1px solid #ddd;
+        }
+        .fixed_header{
+            width: 400px;
+            table-layout: fixed;
+            border-collapse: separate;
+        }
+        .fixed_header tbody{
+            display: block;
+            width: 100%;
+            overflow-y: auto;
+            height: 128px;
+            
+        }
+        .fixed_header thead tr{
+            display: block;
+        }
+        .fixed_header thead{
+            background-color: black;
+            color: #fff;
+            
+        }
+        .fixed_header th{
+            padding: 5px 3px;
+            text-align: center;
+            width: 68px;
+        }
+        .fixed_header td{
+            padding: 5px 3px;
+            text-align: center;
+            width: 200px;
+        }
+        .fixed_header thead th:before{
+            color: blueviolet;
+            font-size: 10px;
+            content: "\f11a";
+            padding-right: 2px;
+            font-family: FontAwesome;
+        }
+        .fixed_header tbody td{
+            font-size: 10px;
+            padding: 5px 3px;
+            font-style: italic;
+        }
+
+    </style>
+</head>
+<body>
+    <table class="fixed_header">
+        <thead>
+            <tr>
+                <th>Col 1</th>
+                <th>Col 2</th>
+                <th>Col 3</th>
+                <th>Col 4</th>
+                <th>Col 5</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>row 1-0</td>
+                <td>row 1-1</td>
+                <td>row 1-2</td>
+                <td>row 1-3</td>
+                <td>row 1-4</td>
+            </tr>
+            <tr>
+                <td>row 2-0</td>
+                <td>row 2-1</td>
+                <td>row 2-2</td>
+                <td>row 2-3</td>
+                <td>row 2-4</td>
+            </tr>
+            <tr>
+                <td>row 3-0</td>
+                <td>row 3-1</td>
+                <td>row 3-2</td>
+                <td>row 3-3</td>
+                <td>row 3-4</td>
+            </tr>
+            <tr>
+                <td>row 4-0</td>
+                <td>row 4-1</td>
+                <td>row 4-2</td>
+                <td>row 4-3</td>
+                <td>row 4-4</td>
+            </tr>
+            <tr>
+                <td>row 5-0</td>
+                <td>row 5-1</td>
+                <td>row 5-2</td>
+                <td>row 5-3</td>
+                <td>row 5-4</td>
+            </tr>
+            <tr>
+                <td>row 6-0</td>
+                <td>row 6-1</td>
+                <td>row 6-2</td>
+                <td>row 6-3</td>
+                <td>row 6-4</td>
+            </tr>
+            <tr>
+                <td>row 7-0</td>
+                <td>row 7-1</td>
+                <td>row 7-2</td>
+                <td>row 7-3</td>
+                <td>row 7-4</td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>

@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>cssGridAirbnb</title>
+    <link rel="shortcut icon" href="../Pictures/Airbnb/Favicon/icons8-airbnb-48.png" type="image/x-icon">
+    <style>
+        html, body{
+            width: 100%;
+            height: 100%;
+
+        }
+        .title2{
+            margin-left: 2.5%;
+            position: absolute;
+            top: 22%;
+        }
+        .title{
+            margin-left: 2.5%;
+            position:absolute;
+            top: 18%;
+            font-size: 25px;
+            font-weight: bold;
+        }
+        .container{
+            position: absolute;
+            bottom: 3%;
+            margin: 2.5%;
+            width: 90%;
+            height: 65%;
+            border: 1px solid white;
+            display: grid;
+            grid-template-columns: repeat(1,23.5% 23.5% 23.5% 23.5%);
+            grid-template-rows: 250px 250px;
+            grid-gap: 20px;
+        }
+        .container div{
+            background-color: none;
+        }
+        .air img{
+            width: 100%;
+            height: 70%;
+            border-radius: 5px;
+        }
+        .link{
+            padding: 5px;
+            text-decoration: none;
+            font-size: 17px;
+            color: seagreen;
+            font-weight: bold;
+        }
+        .link:hover{
+            text-decoration: underline;
+        }
+        .superhost{
+            font-size: 12px;
+            background-color: white;
+            border: 1px solid black;
+            color: black;
+            border-radius: 5px;
+        }
+        .PLUShost{
+            background-color: darkred;
+            color: white;
+            border-radius: 5px;
+            border: none;
+            font-size: 12px;
+        }
+        .explain{
+            color: grey;
+            font-size: 14px;
+        }
+        .star{
+            color: red;
+        }
+        .explanation{
+            display: grid;
+            grid-template-columns: 74px 90px 60px;
+            grid-gap: 5px;
+        }   
+        .right{
+            place-self: end;
+            font-size: 14px;
+        }
+        .searchmenu{
+            width: 100%;
+            height: 9%;
+            position: fixed;
+            top: 0%;
+            background-color: white;
+            display: grid;
+            grid-template-columns: repeat(1,1fr 6fr 1fr 1fr 2fr 1fr 1fr 1fr);
+            grid-template-rows: 100%;
+            align-items: center;
+            border-bottom: 1px solid rgba(211, 211, 211, 0.603);
+            
+        }
+        .search{
+            border: 1px solid lightgrey;
+            height: 45px;
+            width: 430px;
+            box-shadow: 0px 2px 2px 0px lightgrey;
+        }
+        .searchlink{
+            text-decoration: none;
+            color: black;
+            font-size: 13.5px;
+            font-weight: bold;
+        }
+        .logo{
+            padding-left: 20px;
+            height: 40px;
+            width: auto;
+        }
+        .subsearchmenu{
+            position: fixed;
+            top: 9%;
+            width: 100%;
+            height: 4.5%;
+            background-color: white;
+            border-bottom: 1px solid rgba(211, 211, 211, 0.603);
+        }
+        .subsearchmenu2{
+            display: flex;
+            margin-left: 50px;
+            justify-items: flex-start;
+        }
+        .submenulink{
+            font-size: 14px;
+            padding: 10px;
+            border-radius: 25px;
+            border: 1px solid lightgray;
+            text-decoration: none;
+            color: black;
+        }
+    </style>
+</head>
+<body>
+    <div class="searchmenu">
+        <div><img class="logo" src="../Pictures/Airbnb/airbnb-logo-266x300@2x.png" alt=""></div>
+        <div><input class="search" type="text" placeholder="모든 위치.숙소" style="font-size: 18px; font-weight: bolder; color: black;"></div>
+        <div><a class="searchlink" href="#"><svg viewBox="0 0 12 12" width="0.8571428571428571em" height="0.8571428571428571em"><path d="M3.48 3.5c.17-.85.43-1.6.75-2.18A5.02 5.02 0 001.67 3.5zm1.03 0h2.98C7.16 2 6.57 1 6 1S4.84 2 4.5 3.5zm4 0h1.82a5.02 5.02 0 00-2.56-2.18c.32.58.58 1.33.75 2.18zm.16 1a13.82 13.82 0 010 3h2.1a5 5 0 000-3zm-1.01 0H4.34a12.43 12.43 0 000 3h3.32a12.43 12.43 0 000-3zm-4.33 0h-2.1a5 5 0 000 3h2.1a13.82 13.82 0 010-3zm5.19 4a7.5 7.5 0 01-.75 2.18 5.02 5.02 0 002.56-2.18zm-1.03 0H4.51C4.84 10 5.43 11 6 11s1.16-1 1.5-2.5zm-4 0H1.66c.57 1 1.48 1.77 2.56 2.18a7.5 7.5 0 01-.75-2.18zM6 12A6 6 0 116 0a6 6 0 010 12z" fill="currentcolor"></path></svg> 한국어(KR) </a></div>
+        <div><a class="searchlink" href="#"> \ KRW</a></div>
+        <div><a class="searchlink" href="#">호스트가 되어보세요</a></div>
+        <div><a class="searchlink" href="#">도움말</a></div>
+        <div><a class="searchlink" href="#">회원 가입</a></div>
+        <div><a class="searchlink" href="#">로그인</a></div>
+    </div>
+    <div class="subsearchmenu">
+        <div class="subsearchmenu2">
+            <a class="submenulink" href="#">날짜</a>
+            <a class="submenulink" href="#">인원</a>
+            <a class="submenulink" href="#">출장</a>
+            <a class="submenulink" href="#">숙소 유형</a>
+            <a class="submenulink" href="#">가격</a>
+            <a class="submenulink" href="#">즉시 예약</a>
+            <a class="submenulink" href="#">필터 추가하기</a>
+        </div>
+    </div>
+    <div class="title">최고 평점을 받은 숙소</div>
+    <div class="title2">최고의 평점을 받은 전 세계의 숙소를 둘러보세요.</div>
+    <br>
+    <div class="container">
+        <div class="air h1">
+            <img src="../Pictures/Airbnb/56bff280-aba3-42f3-af42-adc2814a72f4.jpg">
+            <br>
+            <div class="explanation">
+                <button class="superhost">슈퍼호스트</button>
+                <span class="explain">Orondo</span>
+                <span class="right"><span class="star">★</span>4.87</span>
+            </div>
+            Underground Hygge
+        </div>
+        <div class="air h2">
+            <img src="../Pictures/Airbnb/812e040f-6f6f-4cae-ad67-66c050b57c1f.jpg">
+            <br>
+            <div class="explanation">
+                <button class="superhost">슈퍼호스트</button>
+                <span class="explain">조슈아 트리</span>
+                <span class="right"><span class="star">★</span>4.87</span>
+            </div>
+            The Joshua Tree House
+        </div>
+        <div class="air h3">
+            <img src="../Pictures/Airbnb/bb1eb2dd_original.jpg">
+            <br>
+            <div class="explanation">
+                <button class="superhost">슈퍼호스트</button>
+                <span class="explain">아르메니아</span>
+                <span class="right"><span class="star">★</span>4.93</span>
+            </div>
+            Romantic Cabana With View
+        </div>
+        <div class="air h4">
+            <img src="../Pictures/Airbnb/cd17b75f-9aee-4f68-b80d-dde84996fb4b.jpg">
+            <br>
+            <div class="explanation">
+                <button class="superhost">슈퍼호스트</button>
+                <span class="explain">무헤레스 섬</span>
+                <span class="right"><span class="star">★</span>4.76</span>
+            </div>
+            The World Famous Seashell   ...
+        </div>
+        <div class="air h5">
+            <img src="../Pictures/Airbnb/d4833a1c_original.jpg">
+            <br>
+            <div class="explanation">
+                <button class="superhost">슈퍼호스트</button>
+                <span class="explain">Akureyri</span>
+                <span class="right"><span class="star">★</span>4.75</span>
+            </div>
+            Amazing View - Moderne...
+        </div>
+        <div class="air h6">
+            <img src="../Pictures/Airbnb/d7329e9a_original.jpg">
+            <br>
+            <div class="explanation">
+                <button class="superhost">슈퍼호스트</button>
+                <span class="explain">오스투니</span>
+                <span class="right"><span class="star">★</span>4.93</span>
+            </div>
+            I SETTE CONI - TRULLO EDERA
+        </div>
+        <div class="air h7">
+            <img src="../Pictures/Airbnb/dc09ee21-27e9-4dcd-9b59-7ba7ade0563f.jpg">
+            <br>
+            <div class="explanation" style="grid-template-columns: 45px 90px 90px;">
+                <button class="PLUShost">PLUS</button>
+                <span class="explain">Mayne Island</span>
+                <span class="right"><span class="star">★</span>4.97</span>
+            </div>
+            Cob Cottage
+        </div>
+        <div class="air h8">
+            <img src="../Pictures/Airbnb/f4987a12_original.jpg">
+            <br>
+            <div class="explanation" style="grid-template-columns:90px 140px;">
+                <span class="explain">Pioneer Town</span>
+                <span class="right"><span class="star">★</span>4.93</span>
+            </div>
+            Off-grid itHouse
+        </div>
+        <a href="#" class="link">모두 보기(2,000개 이상) ></a>
+    </div>
+</body>
+</html>

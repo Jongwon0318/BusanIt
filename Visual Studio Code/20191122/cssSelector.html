@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Selector</title>
+    <style>
+    body{
+        background-color:tan;
+    }
+    *{  
+        color: ghostwhite;
+    }
+    h1{
+        color: mistyrose;
+        background-color:salmon;
+    }
+    p{
+        color: lightyellow;
+        background-color: indianred;
+    }
+    .css1{
+        background-color: orangered;
+    }
+    .css2{
+        background-color: palevioletred;
+    }
+    .css3{
+        background-color: firebrick;
+    }
+    #css1{
+        background-color: mediumvioletred ;
+    }
+    h2,h3{
+        color: mintcream;
+    }
+    .css4, #css4{
+        color: moccasin;
+        background-color: mediumorchid;
+    }
+    div{
+        background-color: lightsalmon;
+    }
+    .div2 > p{
+        color: mistyrose;
+    }
+    div p{
+        color: red;
+        background-color: indigo;
+    }
+    .div3 p{
+        color: orange;
+    }
+    </style>
+</head>
+<body>
+    <div class="div1">
+        <h1>CSS Selector</h1>
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ducimus, dolore?</p>
+        <p class="css4">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ducimus, dolore?</p>
+        <p id="css4">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ducimus, dolore?</p>
+        <p class="css1" id="css1">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ducimus, dolore?</p>
+        <p class="css2">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ducimus, dolore?</p>
+        <p class="css3">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ducimus, dolore?</p>
+        <br>
+        <h2>A</h2>
+        <h3>B</h3>
+        <br>
+        <div class="div2">
+            <h1>Lorem</h1>
+            <p>Lorem ipsum, dolor sit amet consec   tetur adipisicing elit. Ducimus, dolore?</p>
+            <div>
+                <p>Lorem ipsum, dolor sit amet consec   tetur adipisicing elit. Ducimus, dolore?</p>
+                <p>Lorem ipsum, dolor sit amet consec   tetur adipisicing elit. Ducimus, dolore?</p>
+                <p>Lorem ipsum, dolor sit amet consec   tetur adipisicing elit. Ducimus, dolore?</p>
+            </div>
+
+            <div class="div3">
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ducimus, dolore?</p>
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ducimus, dolore?</p>
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ducimus, dolore?</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <title>JQuerySlide&Animation</title>
+    <!-- 제이쿼리 CDN 링크 -->
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.min.js"
+      integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- 제이쿼리 다운로드 -->
+    <script src="JS/jquery-3.4.1.min.js"></script>
+
+    <style>
+      #box {
+        background: #333;
+        color: white;
+        width: 400px;
+        height: 90px;
+        padding: 40px;
+        text-align: center;
+      }
+
+      #box2 {
+        background: red;
+        width: 100px;
+        height: 100px;
+        position: relative;
+      }
+    </style>
+  </head>
+  <body>
+    <button id="btnSlideUp">슬라이드 업</button>
+    <button id="btnSlideDown">슬아이드 다운</button>
+    <button id="btnSlideTog">슬라이드 토글</button>
+    <hr />
+    <div id="box"><h1>페이드/슬라이드 효과</h1></div>
+    <button id="btnStop">STOP</button>
+    <hr />
+    <button id="moveLeft">이동 왼쪽</button>
+    <button id="moveRight">이동 오른쪽</button>
+    <button id="moveAround">이동 어라운드</button>
+    <div id="box2"></div>
+
+    <!-- JQuery,JavaScript 기본위치 : body태그가 끝나는 지점 바로 위-->
+    <script>
+      $(document).ready(function() {
+        $("#btnSlideUp").on("click", function() {
+          $("#box").slideUp(3000);
+        });
+        $("#btnSlideDown").on("click", function() {
+          $("#box").slideDown(3000);
+        });
+        $("#btnSlideTog").on("click", function() {
+          $("#box").slideToggle(3000);
+        });
+        $("#btnStop").on("click", function() {
+          $("#box").stop();
+        });
+        $("#moveRight").on("click", function() {
+          $("#box2").animate({
+            left: 500
+          });
+        });
+        $("#moveLeft").on("click", function() {
+          $("#box2").animate({
+            left: 0
+          });
+        });
+        $("#moveAround").on("click", function() {
+          let box = $("#box2");
+          box.animate({
+            left: 300
+          });
+          box.animate({
+            top: 200
+          });
+          box.animate({
+            left: 300
+          });
+          box.animate({
+            left: 0
+          });
+          box.animate({
+            top: 0
+          });
+        });
+      });
+    </script>
+  </body>
+</html>

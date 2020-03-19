@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>cssPositionex</title>
+    <style>
+        #main {
+          position: relative;
+          height: 200px;
+          width: 200px;
+          border: 1px solid black;
+        }
+        #center {
+          position: relative;
+          left:50px;
+          top:50px;
+          border: 1px solid black;
+          width: 100px;height: 100px; 
+        }
+
+        div { height: 50px;width: 50px; font-size: 10px;}
+        /* absolute : 부모태그의 좌표를 기준으로 함 */
+        .blue { background-color: lightblue; position: absolute; }
+        .green {background-color: lightgreen; position: absolute; right:0}
+        .yellow {background-color: yellow; position: absolute; right:0; bottom:0 }
+        .red {background-color: lightpink; position: absolute;  bottom:0;}
+    </style>
+</head>
+<body>
+    <div id="main">
+      <div class="blue">1</div>
+      <div class="green">2</div>
+      <div class="yellow">3</div>
+      <div class="red">4</div>
+      <div id="center">
+        <div class="blue">1</div>
+        <div class="green">2</div>
+        <div class="yellow">3</div>
+        <div class="red">4</div>
+      </div>
+    </div>
+</body>
+</html>

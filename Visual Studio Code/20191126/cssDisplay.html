@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>cssDisplay</title>
+    <style>
+        body {
+            line-height: 1.5;
+        }
+        section {
+            padding: 1em;
+        }
+        header {
+            margin-bottom: 1em;
+        }
+        .block {
+            background: blanchedalmond;
+        }
+        .block div {
+            border: 1px dashed chocolate;
+            height: 50px;
+        }
+        .inline-block {
+            background: mistyrose;
+        }
+        .inline-block  div {
+            display: inline-block;
+            height: 50px;
+            width: 250px;
+            border: 1px dashed;
+        }
+        .inline {
+            background: lemonchiffon;
+        }
+        .inline div {
+            display: inline;
+            border: 1px dashed darkgreen;
+        }
+    </style>
+</head>
+<body>
+    <section class="block">
+        <header>Block</header>
+        <div>블록태그 입니다.</div>
+        <div>블록태그 입니다.</div>
+        <div>블록태그 입니다.</div>
+    </section>
+    <section class="inline-block">
+        <header>InlineBlock</header>
+        <div>인라인블록은 높이가 있지요.</div>
+        <div>인라인블록은 높이가 있지요.</div>
+        <div>인라인블록은 높이가 있지요.</div>
+    </section>
+    <section class="inline">
+        <header>Inline</header>
+        <div>인라인 입니다.</div>
+        <div>인라인 입니다.</div>
+        <div>인라인 입니다.</div>
+    </section>
+</body>
+</html>

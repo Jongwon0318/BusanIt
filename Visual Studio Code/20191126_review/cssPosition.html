@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>cssPosition</title>
+    <style>
+        .container{
+            border: 2px solid black;
+            width: 600px;
+            height: 300px;
+            margin: 0 auto;
+            position: relative;
+        }
+        .box{
+            width: 100px;
+            height: 100px;
+            color: white;
+        }
+        .red{
+            background-color: tomato;
+        }
+        .green{
+            background-color: yellowgreen;
+        }
+        .blue{
+            background-color: skyblue;
+        }
+        .purple{
+            background-color: purple;
+        }
+        .relative{
+            position: relative;
+            top: 15px;
+            left: 25px;
+        }
+        .absolute{
+            position: absolute;
+            top: 15px;
+            left: 25px;
+        }
+        .fixed{
+            position: fixed;
+            bottom: 25px;
+            right: 25px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="box red">1</div>
+        <div class="box green absolute">2</div>
+        <div class="box blue relative">3</div>
+    </div>
+    <div class="box purple fixed">3</div>
+</body>
+</html>

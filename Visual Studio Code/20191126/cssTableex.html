@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>cssTableex</title>
+    <style>
+
+        table, th, td{
+            text-align: left;
+            border-collapse: collapse;
+            padding: 10px;
+            font-size: 15px;
+        }
+        table{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        tr{
+            border-left: 1.5px solid #ddd;
+            border-right: 1.5px solid #ddd;
+        }
+        th{
+            height: 1.5em;
+            background-color: lightskyblue;
+            color: white;
+        }
+        td{
+            font-size: 12px;
+        }
+        tr th{
+            border-left:1.5px solid lightskyblue;
+            border-right: 1.5px solid lightskyblue;
+        }
+        tr td:first-child,tr th:first-child{
+            width: 30px;
+        }
+        tr td:nth-child(2),tr th:nth-child(2){
+            width: 250px;
+        }
+        tr td:nth-child(3),tr th:nth-child(3){
+            width: 50px;
+        }
+        tr td:nth-child(4),tr th:nth-child(4){
+            width: 70px;
+        }
+        tr td:last-child,tr th:last-child{
+            width: 50px;
+        }
+        tr:nth-child(even){
+            background-color: #ddd;
+        }
+        tr:hover{
+            background-color: lightcoral;
+            color: white;
+        }
+        tr:nth-child(even):hover{
+            background-color: lightcoral;
+            color: white;
+        }
+        .pagination {
+            display: flex;
+            justify-content: center;
+        }
+
+        .pagination a {
+            padding: 3px 10px;
+            text-decoration: none;
+            border: 1px solid #ddd;
+            font-size: 13px;
+        }
+
+        .pagination a:hover {background-color: #ddd;}
+
+        .pagination a:first-child {
+            border-top-left-radius: 5px;
+            border-bottom-left-radius: 5px;
+        }
+
+        .pagination a:last-child {
+            border-top-right-radius: 5px;
+            border-bottom-right-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <table>
+        <tr>
+            <th>번호</th>
+            <th>제목</th>
+            <th>작성자</th>
+            <th>날짜</th>
+            <th>조회수</th>
+        </tr>
+        <tr>
+            <td>99</td>
+            <td>누가 CSS 공부한다면서요?</td>
+            <td>홍길동</td>
+            <td>2019.07.02</td>
+            <td>1</td>
+        </tr>
+        <tr>
+            <td>100</td>
+            <td>꺼진불도 다시보자.gif</td>
+            <td>김유신</td>
+            <td>2019.07.02</td>
+            <td>3</td>
+        </tr>
+        <tr>
+            <td>101</td>
+            <td>아 배고픈데...</td>
+            <td>걸신</td>
+            <td>2019.07.02</td>
+            <td>7</td>
+        </tr>
+    </table>
+    <div class="pagination">
+      <a href="#">&laquo;</a>
+      <a href="#">1</a>
+      <a href="#">2</a>
+      <a href="#">3</a>
+      <a href="#">4</a>
+      <a href="#">5</a>
+      <a href="#">6</a>
+      <a href="#">&raquo;</a>
+    </div>
+</body>
+</html>

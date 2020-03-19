@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>cssLink</title>
+    <style>
+        .none{
+            text-decoration: none;
+            color: green;
+        }
+        a:link{
+            text-decoration: none;
+            color: blue;
+        }
+        a:visited{
+            text-decoration: none;
+            color: red;
+        }
+        a:hover{
+            text-decoration: underline hotpink;
+            color: skyblue;
+        }
+        a:active{
+            text-decoration: underline violet;
+            color: skyblue;
+        }
+        a.button{
+            padding: 15px;
+            border: 2px solid green;
+        }
+        a.button2{
+            padding: 60px 20px;
+            color: white;
+            background-color: plum;
+        }
+        a.button2:hover{
+            padding: 60px 20px;
+            color: white;
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+    <p><a href="#" target="_blank">Text Link</a></p>
+    <p><a href="#" target="_blank" class="none">Text Link</a></p>
+    <br><br>
+    <p><a href="#" target="_blank" class="button">Link Button</a></p>
+    <br><br><br><br><br>
+    <p><a href="#" target="_blank" class="button2">Link Button2</a></p>
+</body>
+</html>

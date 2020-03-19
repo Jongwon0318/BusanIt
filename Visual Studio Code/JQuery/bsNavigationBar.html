@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- 위 3개의 메타 태그는 head 태그의 처음에 와야합니다 -->
+    <title>bsNavigationBar</title>
+    <link rel="stylesheet" href="./css/bootstrap.min.css" />
+    <style>
+      /* CSS작성 */
+    </style>
+  </head>
+  <body>
+    <!-- HTML 작성 -->
+    <div class="container mb-3">
+      <h3><code>Dropdown Button</code></h3>
+      <br />
+      <div class="dropdown">
+        <button
+          type="button"
+          class="btn btn-primary dropdown-toggle"
+          data-toggle="dropdown"
+        >
+          Dropdown Button
+        </button>
+        <div class="dropdown-menu">
+          <div class="dropdown-header">Links</div>
+          <a href="#" class="dropdown-item">Link 1</a>
+          <a href="#" class="dropdown-item">Link 2</a>
+          <a href="#" class="dropdown-item">Link 3</a>
+        </div>
+      </div>
+    </div>
+    <br />
+    <div class="container mb-3">
+      <h3><code>Dropdown Link</code></h3>
+      <br />
+      <div class="dropdown">
+        <a
+          href="#"
+          class="btn btn-secondary dropdown-toggle"
+          data-toggle="dropdown"
+        >
+          Dropdown Link
+        </a>
+        <div class="dropdown-menu">
+          <div class="dropdown-header">Actions</div>
+          <a href="#" class="dropdown-item">Action</a>
+          <a href="#" class="dropdown-item">Another Action</a>
+          <a href="#" class="dropdown-item">Something else here</a>
+        </div>
+      </div>
+    </div>
+    <br />
+    <div class="container mb-3">
+      <h3><code>Dropright</code></h3>
+      <div class="dropdown dropright">
+        <a
+          href="#"
+          class="btn btn-warning dropdown-toggle"
+          data-toggle="dropdown"
+        >
+          Dropdowns
+        </a>
+        <div class="dropdown-menu">
+          <div class="dropdown-header">Links</div>
+          <a href="#" class="dropdown-item">Link 1</a>
+          <a href="#" class="dropdown-item">Link 2</a>
+          <a href="#" class="dropdown-item">Link 3</a>
+          <div class="dropdown-header">Actions</div>
+          <a href="#" class="dropdown-item">Action</a>
+          <a href="#" class="dropdown-item">Another Action</a>
+          <a href="#" class="dropdown-item">Something else here</a>
+        </div>
+      </div>
+    </div>
+    <br /><br />
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-md bg-dark navbar-dark">
+      <div id="nbar" class="collapse navbar-collapse">
+        <!-- List -->
+        <ul class="navbar-nav mr-auto mt-2 mt-md-0">
+          <!-- Navbar auto toggle button-->
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-toggle="collapse"
+            data-target="#nbar"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <!-- Title -->
+          <a href="#" class="navbar-brand">Navbar</a>
+
+          <li class="nav-item"><a href="#" class="nav-link">Link 1</a></li>
+          <li class="nav-item"><a href="#" class="nav-link">Link 2</a></li>
+          <li class="nav-item"><a href="#" class="nav-link">Link 3</a></li>
+          <li class="nav-item">
+            <a href="#" class="nav-link disabled">Disabled</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">
+              Dropdown
+            </a>
+            <div class="dropdown-menu">
+              <a href="#" class="dropdown-item">Link 1</a>
+              <a href="#" class="dropdown-item">Link 2</a>
+              <a href="#" class="dropdown-item">Link 3</a>
+            </div>
+          </li>
+        </ul>
+        <form action="" class="form-inline ml-auto my-2 my-md-0">
+          <input
+            type="text"
+            class="form-control mr-sm-2"
+            placeholder="Search"
+          />
+          <button class="btn btn-success" type="submit">Search</button>
+        </form>
+      </div>
+    </nav>
+
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+
+    <script>
+      // 자바스크립트 작성
+    </script>
+  </body>
+</html>

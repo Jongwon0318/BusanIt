@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>cssOpacity&Z-index</title>
+    <style>
+        .red, .green, .blue {
+            position: absolute;
+            width: 100px;
+            color: white;
+            line-height: 100px;
+            text-align: center;
+        }
+        span {
+            opacity: 0.5;
+        }
+        .red {
+            z-index: 10;
+            top: 20px;
+            left: 80px;
+            background: red;
+        }
+        .green {
+            z-index: 2;
+            top: 80px;
+            left: 20px;
+            background: green;
+        }
+        .blue {
+            z-index: 11;
+            top: 100px;
+            left: 100px;
+            background: blue;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <span class="red">z-index:10</span>
+    </div>
+    <div>
+        <span class="green">z-index:2</span>
+    </div>
+    <div>
+        <span class="blue">z-index:1</span>
+    </div>
+</body>
+</html>

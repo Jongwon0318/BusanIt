@@ -1,0 +1,50 @@
+    h1, h2 {
+    font-family: "맑은 고딕","돋움", monospace;
+    color: skyblue;
+    }
+    
+    p{
+      color: red;
+    }
+
+    .blue-paragraph {
+      color: blue;
+    }
+
+    .green {
+      border: 2px solid green;
+    }
+
+    .green p {
+      color: green;
+    }
+
+    p.purple {
+      color: purple;
+    }
+
+    #black{
+      color: black;
+      font-weight: bold;
+    }
+
+    #links p {
+      color: black;
+    }
+
+    #box-model p{
+      color: white;
+      background-color: lightgrey;
+    }
+
+
+    #box-model a {
+      color: white;
+      background-color: darkgray;
+    }
+
+    #box-model .white-background
+    {
+      color: black;
+      background-color: white;
+    }

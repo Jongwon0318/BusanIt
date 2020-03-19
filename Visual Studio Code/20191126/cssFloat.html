@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>cssFloat</title>
+    <style>
+       .container{
+         width: 600px;
+         margin: 0 auto;
+         height: 300px;
+         border: 2px solid gray;
+       }
+       .box{
+         width: 100px;
+         height: 100px;
+         overflow: hidden;
+       }
+       .red{background:red;}
+       .green{background:green;}
+       .blue{background:blue;}
+       .float-left{float:left;}
+       .float-right{float:right;}
+       .clear{clear: both;}
+    </style>
+</head>
+<body>
+    <div class="container">
+      <div class="box red float-right"></div>
+      <div class="box green float-right clear"></div>
+      <div class="box blue float-left clear"></div>
+    </div>
+</body>
+</html>

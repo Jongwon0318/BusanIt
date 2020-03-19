@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>cssBlend</title>
+    <style>
+        html, body{
+            height: 100%;
+        }
+        .blend{
+            height: 400px;
+            width: 600px;
+            background-size: cover;
+            background-repeat: no-repeat;
+            border: 5px solid black;
+            background-image: url(../Pictures/image.jpg);
+            background-color: deeppink;
+            background-blend-mode: hard-light;
+            transition:background-color 5s;
+        }
+        .blend:hover{
+            background-color: black;
+            transition:background-color 5s;
+        }
+    </style>
+</head>
+<body>
+    <div class="blend"></div>
+</body>
+</html>

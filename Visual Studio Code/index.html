@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- 위 3개의 메타 태그는 head 태그의 처음에 와야합니다 -->
+    <title>Index</title>
+
+    <link
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+
+    <style>
+      /* CSS작성 */
+      body {
+        width: 80%;
+        height: 80%;
+        margin-left: 10%;
+        margin-top: 30%;
+      }
+      #index {
+        display: inline;
+      }
+      #title:hover {
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- HTML 작성 -->
+    <div class="text-center" id="title">
+      <h1 id="index" class="text-danger">Index</h1>
+    </div>
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.js"
+      integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+      integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+      crossorigin="anonymous"
+    ></script>
+
+    <script>
+      // 자바스크립트 작성
+      $(function() {
+        $("#title").on("click", function() {
+          $("#title").slideToggle(1000);
+          setTimeout(function() {
+            window.location.href = "tables.html";
+          }, 1001);
+        });
+      });
+    </script>
+  </body>
+</html>

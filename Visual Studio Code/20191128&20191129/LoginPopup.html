@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>LoginPopup</title>
+    <style>
+        * {box-sizing: border-box;}
+
+		/* 텍스트상자 */
+		.text_input {
+		    width: 100%;
+		    padding: 15px;
+		    margin: 5px 0 22px 0;
+		    display: inline-block;
+		    border: none;
+		    background: #f1f1f1;
+		}
+
+		/* 버튼 스타일*/
+		button {
+		    background-color: red;
+		    color: white;
+		    padding: 14px 20px;
+		    margin: 8px 0;
+		    border: none;
+		    cursor: pointer;
+		    width: 100%;
+		}
+
+		.container {
+		    padding: 10px 16px;
+		}
+
+		/* 배경화면(로그인창 바깥) */
+		.modal {
+		    display: none; /* 기본 안보이도록 */
+		    position: fixed; /* 포지션 픽스 */
+		    left: 0;
+		    top: 0;
+		    width: 100%; /* 가로길이 */
+		    height: 100%; /* 세로높이 */
+		    overflow: auto; /* 필요하면 스크롤 가능 */
+		    background-color: #474e5db2;
+		}
+
+		/* 로그인창 */
+		.modal-content {
+		    background-color: #fefefe;
+		    position: absolute;
+		    top: 20%;
+		    left: 20%;
+		    border: 1px solid #888;
+		    width: 30%; 
+		}
+
+		hr {
+		    border: 1px solid #f1f1f1;
+		    margin-bottom: 25px;
+		}
+		
+		/* 종료버튼 (x) */
+		.close {
+		    float: right;
+		    font-size: 40px;
+		    font-weight: bold;
+		    color: black;
+		}
+
+		.close:hover,
+		.close:focus {
+		    color: #f44336;
+		    cursor: pointer;
+		}
+    </style>
+</head>
+<body>
+    <h2>로그인 폼</h2>
+    <button onclick="openLogin();" style="width:auto;">로그인</button>
+    <!-- 로그인 폼 시작 -->
+    <div id="login" class="modal">
+        <form class="modal-content">
+            <div class="container">
+                <span onclick="closeLogin();" class="close">&times;</span>
+                <h3>로그인</h3>
+                <p>아이디와 비밀번호를 입력해 주세요.</p>
+                <hr>
+
+                <input type="text" class="text_input" placeholder="Enter ID" >
+                <input type="password" class="text_input" placeholder="Enter Password" >
+                
+                <label>
+                    <input type="checkbox" checked="checked" style="margin-bottom:15px"> 아이디저장
+                </label>
+            
+                <div>
+                    <button type="submit" class="loginBtn">로그인</button>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <!-- 로그인 폼 끝 -->
+    <script>
+        var login = document.getElementById('login');
+
+        function openLogin(){
+            login.style.display='block';
+        }
+
+        function closeLogin(){
+            login.style.display='none';
+        }
+
+        // 로그인 화면 바깥의 영역을 클릭할 경우 로그인 창 닫기
+        window.onclick = function(event) {
+            if (event.target == login) {
+                login.style.display = "none";
+            }
+        }
+    </script>
+</body>
+</html>

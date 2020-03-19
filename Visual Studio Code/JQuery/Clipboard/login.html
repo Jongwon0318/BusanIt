@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- 위 3개의 메타 태그는 head 태그의 처음에 와야합니다 -->
+    <title>Posts</title>
+    <link rel="stylesheet" href="../css/bootstrap.min.css" />
+    <style>
+      /* CSS작성 */
+    </style>
+  </head>
+  <body>
+    <!-- HTML 작성 -->
+    <!-- 네비게이션 바 시작 -->
+    <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+      <!-- 컨테이너 시작 -->
+      <div class="container">
+        <a href="index.html" class="navbar-brand">로고</a>
+        <button
+          class="navbar-toggler"
+          data-toggle="collapse"
+          data-target="#navbarCollapse"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>          
+        </div>
+        <!-- collapse 묶음 끝 -->
+      </div>
+      <!-- 컨테이너 끝 -->
+    </nav>
+    <!-- 네브바 끝 -->
+
+    <!-- header 시작 -->
+    <header id="main-header" class="py-2 bg-primary text-white">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6">
+            <h1><i class="fas fa-user"></i> 로그인 화면</h1>
+          </div>
+        </div>
+      </div>
+    </header>
+    <!-- Header 끝 -->
+
+    <!-- SEARCH 시작 -->
+    <section id="search" class="py-4 mb-4 bg-light">
+      <div class="container">
+        <div class="row"></div>          
+        </div>
+    </section>
+    <!-- SEARCH 끝 -->
+    <section id="login">
+      <div class="container">
+        <div class="row">
+          <div class="col-6 mx-auto">
+            <div class="card">
+              <div class="card-header">
+                <h4>로그인</h4>
+              </div>
+              <div class="card-body">
+                <form action="index.html">
+                  <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="text" class="form-control">
+                  </div>
+                  <div class="form-group"> 
+                    <label for="password">Password</label>
+                    <input type="password" class="form-control">
+                  </div>
+                  <input type="submit" value="Login" class="btn btn-primary btn-block">                  
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- FOOTER -->
+    <footer id="main-footer" class="bg-dark text-white mt-5 p-5">
+      <div class="container">
+        <div class="row">
+          <div class="col">
+            <p class="lead text-center">
+              Dashboard &copy;
+              <span id="year"></span>
+            </p>
+          </div>
+        </div>
+      </div>
+    </footer>
+    
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="../js/jquery-3.4.1.min.js"></script>
+    <script src="../js/bootstrap.bundle.min.js"></script>
+    <script src="../js/all.min.js"></script>
+    <script>
+      // 자바스크립트 작성
+      $("#year").text(new Date().getFullYear());
+    </script>
+  </body>
+</html>

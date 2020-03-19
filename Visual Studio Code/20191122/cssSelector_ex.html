@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Selectorex</title>
+    <link rel="stylesheet" href="Style.css">
+</head>
+<!-- * < 선택자 < 클래스 < ID -->
+<body>
+  <h1 id="page-top">CSS 선택자.</h1>
+  
+  <h2>클래스(Class)와 아이디(ID)</h2>
+  <p>한줄의 문장입니다.</p>
+  <p class="blue-paragraph">한줄의 문장입니다. 클래스 사용</p>
+  <p class="purple">한줄의 문장입니다. 클래스 사용</p>
+ 
+  <div class="green">
+    <p>한줄의 문장입니다. 왜 녹색이지요?</p>
+    <p>부모 태그를 확인해 보세요</p>
+    <p class="purple"> 한줄의 문장입니다. 클래스 사용</p>
+    <p id="black">한줄의 문장입니다. 아이디 사용</p>
+    <p>위의 두줄의 문장은 왜 녹색이 아닐까요? </p>
+  </div>
+  
+  <div id="links">
+    <h2>External and Internal Links</h2>
+    <p>이것은 외부 링크입니다. <a href="https://unsplash.com/" target="_blank">link</a>.</p>
+    <p>이것은 문서 내부 링크입니다. <a href="#page-top">link</a>.</p>
+    <p>내부링크는 웹문서의 특정위치를 찾아갑니다.<p>
+  </div>
+  
+  <div id="box-model">
+    <h2>Box Model</h2>
+    <p>한 문장 태그는 기본이 블록 태그이지요</p>
+    <p>다른 div나 h 제목 태그들도 블록 입니다.</p>
+    <a href="#page-top">이 a링크 태그처럼 인라인 태그들도 있어요</a>
+    <p class="white-background">인라인과 블록 태그를 구별해 보세요 </br> 왜 이 두줄은 박스가 없지요?</p>
+  </div>
+</body>
+</html>

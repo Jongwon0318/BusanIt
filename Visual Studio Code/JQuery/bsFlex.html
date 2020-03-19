@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- 위 3개의 메타 태그는 head 태그의 처음에 와야합니다 -->
+    <title>bsFlex</title>
+    <link rel="stylesheet" href="./css/bootstrap.min.css" />
+    <style>
+      /* CSS작성 */
+      .col {
+        height: 40vh;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- HTML 작성 -->
+    <!-- flexbox in bootstrap -->
+    <!-- d-flex  -->
+    <!-- justify-content  -->
+    <!-- align-items  -->
+
+    <div class="container">
+      <div class="row">
+        <div
+          class="col p-3 bg-secondary text-white d-flex justify-content-around align-items-center"
+        >
+          <div class="p-2 bg-info align-self-start">Flex item 1</div>
+          <div class="p-2 bg-warning align-self-center">Flex item 2</div>
+          <div class="p-2 bg-primary align-self-end">Flex item 3</div>
+          <div class="p-2 bg-danger align-self-stretch">Flex item 4</div>
+          <div class="p-2 bg-success align-self-baseline">Flex item 5</div>
+        </div>
+      </div>
+    </div>
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="./js/jquery-3.4.1.min.js"></script>
+    <script src="./js/bootstrap.bundle.min.js"></script>
+
+    <script>
+      // 자바스크립트 작성
+    </script>
+  </body>
+</html>

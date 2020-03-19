@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- 위 3개의 메타 태그는 head 태그의 처음에 와야합니다 -->
+    <title>bsPageEx1</title>
+    <link rel="stylesheet" href="./css/bootstrap.min.css" />
+    <style>
+      /* CSS작성 */
+    </style>
+  </head>
+  <body>
+    <!-- HTML 작성 -->
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-md bg-dark navbar-dark">
+      <div id="nbar" class="collapse navbar-collapse">
+        <!-- List -->
+        <ul class="navbar-nav mr-auto mt-2 mt-md-0">
+          <!-- Navbar auto toggle button-->
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-toggle="collapse"
+            data-target="#nbar"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <!-- Title -->
+          <a href="#" class="navbar-brand">
+            <span style="font-size:2em; color:coral">
+              <i class="fab fa-wolf-pack-battalion"></i>
+            </span>
+          </a>
+          <a
+            href="#"
+            class="navbar-brand"
+            style="font-size: 2em; align-self: center;"
+            >Navbar</a
+          >
+
+          <li class="nav-item" style="display: flex;">
+            <a href="#" class="nav-link" style="align-self: center;">Link 1</a>
+          </li>
+          <li class="nav-item" style="display: flex;">
+            <a href="#" class="nav-link" style="align-self: center;">Link 2</a>
+          </li>
+          <li class="nav-item" style="display: flex;">
+            <a href="#" class="nav-link" style="align-self: center;">Link 3</a>
+          </li>
+          <li class="nav-item" style="display: flex;">
+            <a href="#" class="nav-link disabled" style="align-self: center;"
+              >Disabled</a
+            >
+          </li>
+        </ul>
+
+        <form action="" class="form-inline my-2 my-md-0">
+          <ul class="navbar-nav mt-2 mt-md-0">
+            <li class="nav-item dropdown" style="display: flex;">
+              <a
+                href="#"
+                class="nav-link dropdown-toggle"
+                data-toggle="dropdown"
+                style="align-self: center;"
+              >
+                Dropdown
+              </a>
+              <div class="dropdown-menu">
+                <a href="#" class="dropdown-item">Link 1</a>
+                <a href="#" class="dropdown-item">Link 2</a>
+                <a href="#" class="dropdown-item">Link 3</a>
+              </div>
+            </li>
+          </ul>
+          &nbsp;&nbsp;&nbsp;
+          <input
+            type="text"
+            class="form-control mr-sm-2"
+            placeholder="Search"
+          />
+          <button class="btn btn-success" type="submit">Search</button>
+        </form>
+      </div>
+    </nav>
+    <!-- main -->
+    <main>
+      <div class="jumbotron">
+        <div class="container">
+          <h1 class="display-3">Hello, World!</h1>
+          <p>
+            This is a template for a simple marketing or informational website.
+            It includes a large callout called a jumbotron and three supporting
+            pieces of content. Use it as a starting point to create something
+            more unique.
+          </p>
+          <br />
+          <p>
+            <a href="#" class="btn btn-primary btn-lg" role="button"
+              >Learn more >></a
+            >
+          </p>
+        </div>
+      </div>
+      <div class="container">
+        <!-- Example row  of columns -->
+        <div class="row">
+          <div class="col-md-4">
+            <h2>Heading</h2>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt
+              numquam ipsum vel distinctio quos nostrum fugit architecto nobis
+              nemo ab assumenda, recusandae id facilis blanditiis ex maxime, sed
+              eum illo!
+            </p>
+            <p>
+              <a href="#" class="btn btn-secondary" role="button"
+                >View Details >></a
+              >
+            </p>
+          </div>
+          <div class="col-md-4">
+            <h2>Heading</h2>
+            <p>
+              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Id quos
+              cumque nobis ea, aperiam quisquam nisi. Veritatis vitae officia
+              quas.
+            </p>
+            <p>
+              <a href="#" class="btn btn-secondary" role="button"
+                >View Details >></a
+              >
+            </p>
+          </div>
+          <div class="col-md-4">
+            <h2>Heading</h2>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              Perferendis non earum exercitationem cum tempore similique.
+              Ducimus dolore aut fugit aliquam culpa pariatur minus hic,
+              distinctio voluptates ipsam labore aliquid mollitia recusandae
+              veritatis facilis quae cum laudantium impedit voluptatum explicabo
+              ab!
+            </p>
+            <p>
+              <a href="#" class="btn btn-secondary" role="button"
+                >View Details >></a
+              >
+            </p>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <footer class="container">
+      <p>&copy; Company 2019-2021</p>
+    </footer>
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="./js/jquery-3.4.1.min.js"></script>
+    <script src="./js/bootstrap.bundle.min.js"></script>
+    <script src="./js/all.js"></script>
+    <script>
+      // 자바스크립트 작성
+    </script>
+  </body>
+</html>

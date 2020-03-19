@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- 위 3개의 메타 태그는 head 태그의 처음에 와야합니다 -->
+    <title>bsCollapse</title>
+    <link rel="stylesheet" href="./css/bootstrap.min.css" />
+    <style>
+      /* CSS작성 */
+    </style>
+  </head>
+  <body>
+    <!-- HTML 작성 -->
+    <div class="container mt-3">
+      <h3><code>속성 data-toggle 공통</code></h3>
+      <div>
+        <a
+          href="#collapseExample"
+          class="btn btn-primary"
+          data-toggle="collapse"
+        >
+          a링크 href
+        </a>
+        <button
+          class="btn btn-primary"
+          type="button"
+          data-toggle="collapse"
+          data-target="#collapseExample"
+        >
+          버튼 data-target
+        </button>
+      </div>
+      <div class="collapse" id="collapseExample">
+        <div class="card card-body">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet,
+          mollitia.
+        </div>
+      </div>
+    </div>
+    <br /><br /><br />
+    <div class="container mt-3">
+      <h3><code>속성 data-toggle 공통</code></h3>
+      <div>
+        <a href="#collapse1" data-toggle="collapse" class="btn btn-info">
+          토글 1
+        </a>
+        <button
+          class="btn btn-info"
+          type="button"
+          data-toggle="collapse"
+          data-target="#collapse2"
+        >
+          토글 2
+        </button>
+        <button
+          class="btn btn-primary"
+          type="button"
+          data-toggle="collapse"
+          data-target=".multi"
+        >
+          토글 both
+        </button>
+        <button class="btn btn-danger" id="btn1">클릭</button>
+      </div>
+      <div class="collapse multi" id="collapse1">
+        <div class="card card-body">
+          11111 Lorem ipsum dolor sit amet consectetur adipisicing elit.
+          Molestias, magni?
+        </div>
+      </div>
+      <div class="collapse multi" id="collapse2">
+        <div class="card card-body">
+          22222 Lorem ipsum dolor sit amet consectetur adipisicing elit.
+          Reprehenderit, inventore.
+        </div>
+      </div>
+    </div>
+
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="./js/jquery-3.4.1.min.js"></script>
+    <script src="./js/bootstrap.bundle.min.js"></script>
+
+    <script>
+      // 자바스크립트 작성
+      $(function() {
+        console.log("ready!");
+        $("#btn1").on("click", function() {
+          console.log("clicked");
+          let collapses = $("div.container").find(".collapse");
+          console.log(collapses);
+          collapses.each(function() {
+            $(this).collapse("toggle");
+          });
+        });
+      });
+    </script>
+  </body>
+</html>

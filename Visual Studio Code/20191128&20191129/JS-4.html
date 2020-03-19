@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Javascript</title>
+</head>
+<body>
+	<!-- <script>	
+        //함수의 선언	
+        function printTen(){
+			alert(10)
+		}
+
+		printTen();  // 함수의 실행
+	</script> -->
+	<!-- <script>
+		function plusTen(x){
+			return x+10;
+		}
+		alert(plusTen(3));
+	</script> -->
+	<!-- <script>
+		var plusTen = function(){
+			var num = prompt('숫자를 입력해주세요','0');
+			alert(Number(num)+10);
+		};
+		alert(typeof(plusTen));   // 자료형 확인
+		plusTen();       // 함수의 호출 => ()를 함수가 저장된 변수뒤에 붙임 
+
+		var add = plusTen;   // 함수의 복사
+		add();           // 2번째 실행(plusTen)
+
+	</script> -->
+	<!-- <script>
+		function func(callback) {
+    		alert(typeof(callback));    
+   			callback();
+		}
+		function myCall(){
+ 			alert('myCall 호출됨');
+		}
+		func(myCall);
+		var aFunc = function () {
+    		alert('익명함수 호출됨');
+		}
+		func(aFunc);
+	</script> -->
+	<script>
+		// var sum1 = function(a, b) {
+		// 	return a + b;
+		// };
+		// var sum2 = (a, b) => {         
+		//     var result = a + b;       
+		//     return result;             
+		// }
+		// var sum3 = (a, b) => a + b;    // {}, return( 코드 한줄일때 생략가능)
+		// alert( sum1(1, 2) ); 
+		// alert( sum2(1, 2) ); 
+		// alert( sum3(1, 2) );
+
+		// ​var double1 = function(n) { return n * 2 };
+		// var double2 = n => n*2;    // 매개변수(arguments)가 없을때 ()도 생략가능
+		// alert( double1() );
+		// alert( double2() );
+
+		​var sayHi = () => alert("Hello!");
+		sayHi();
+	</script>
+</body>
+</html>

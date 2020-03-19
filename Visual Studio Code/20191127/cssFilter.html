@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>cssFilter</title>
+    <style>
+        html, body{
+            height: 100%;
+            width: 100%;
+        }
+        .filter-me{
+            height: 400px;
+            width: 600px;
+            background-image: url(../Pictures/dog.jpg);
+            background-size: cover;
+            background-repeat: no-repeat;
+            filter: drop-shadow(32px 32px 32px black) hue-rotate(80deg);
+        }
+    </style>
+</head>
+<body>
+    <div class="filter-me"></div>
+</body>
+</html>

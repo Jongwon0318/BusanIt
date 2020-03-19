@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Inherit</title>
+    <style>
+        span{
+            color: blue;
+            border: 1px solid black;
+        }
+        .extra span{
+            color: inherit;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        여기의 <span>span</span>색은 파란색이다.
+    </div>
+    <div class="extra" style="color: yellowgreen;">
+        여기의 <span>span</span>색은 녹색이다. 부모(div)에서 상속
+    </div>
+    <div style="color: red;">
+        여기의 <span>span</span>색은 파란색이다. span인라인 스타일
+    </div>
+</body>
+</html>

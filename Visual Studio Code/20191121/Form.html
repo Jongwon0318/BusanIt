@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Form</title>
+    <style>
+        h2{
+            margin:15px;
+        }
+        h3{
+            margin:15px;
+        }
+        fieldset{
+            margin:15px;
+        }
+
+    </style>
+</head>
+<body>
+    <h2>Normal Form Tag</h2>
+    <form action="" method="GET">
+        First name: <input type="text" name="fname" autofocus required><br>
+        Last name: <input type="text" name="lname" placeholder="With Capital Initiation"><br>
+        <input type="submit" value="Submit">
+    </form>
+    <br>
+    <h2>Label Tag</h2>
+    <form action="" method="GET">
+        <fieldset>
+        <label>ID: <input type="text"></label><br>
+        <label for="Pwd">Pwd: <input type="text" id="Pwd"></label><br>
+        <input type="submit" value="Login">
+        </fieldset>
+    </form>
+    
+    <br>
+    
+    <h2>Fieldset Tag</h2>
+    <form action="" method="GET">
+        <fieldset>
+            <legend>Fieldset Login</legend>
+            <label>ID: <input type="text"></label><br>
+            <label for="Pwd">Pwd: <input type="text" id="Pwd"></label><br>
+            <input type="submit" value="Login">
+        </fieldset>
+    </form>
+    
+    <br>
+
+    <h3>type="password", type="search", type="email", type="number", type="range", type="reset"</h3>
+    <form action="" method="GET">
+        <fieldset>
+        <label for="ID1">ID : <input type="text" id="ID1"></label><br>
+        <label for="Pwd1">Password : <input type="password" id="Pwd1"></label><br>
+        <label for="search">Search : <input type="search" id="search"></label><br>
+        <label for="email">E-mail : <input type="email" id="email"></label><br>
+        <label for="num">Number : <input type="number" id="num" min="0" max="100" value="0" step="1"></label><br>
+        <label for="ran">Range : <input type="range" id="ran" min="0" max="100" value="0" step="10"></label><br>
+        <input type="submit" value="Login">
+        <input type="reset" value="Reset">
+        </fieldset>
+    </form>
+    
+    <br>
+
+    <h3>type="checkbox", type="radio"</h3>
+    <form action="" method="GET">
+        <fieldset>
+            <legend>What do you want to do now?</legend><br>
+            <label for="C1">Sleep<input type="checkbox" id="C1"></label>
+            <label for="C2">Eat<input type="checkbox" id="C2"></label>
+            <label for="C3">Drink<input type="checkbox" id="C3"></label><br><br>
+            <input type="submit" value="Submit">
+            <input type="reset" value="Reset">
+        </fieldset>
+        <br>
+    </form>
+    <form action="" method="GET">
+        <fieldset>
+            <legend>What do you want to do now?</legend><br>
+            <label for="C1">Sleep<input type="radio" id="C1" name="subject"></label>
+            <label for="C2">Eat<input type="radio" id="C2" name="subject"></label>
+            <label for="C3">Drink<input type="radio" id="C3" name="subject" ></label><br><br>
+            <input type="submit" value="Submit">
+            <input type="reset" value="Reset">
+        </fieldset>
+    </form>
+
+    <h3>type="date","month","week", type="file"</h3>
+    <form action="">
+        <fieldset>
+            <legend>Date,Month,Week</legend>
+            <label for="Date">Date : <input type="date" id="Date" value=""></label>
+            <label for="Month">Month : <input type="month" id="Month"></label>
+            <label for="Week">Week : <input type="week" id="Week"></label>
+        </fieldset>
+        <br>
+        <fieldset>
+            <legend>File Select Field</legend>
+            <label for="f1">Select a file <input type="file" id="f1"></label><br>
+            <label for="f2">Select files <input type="file" multiple id="f2"></label>
+        </fieldset>
+    </form>
+</body>
+</html>

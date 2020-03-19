@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <title>JQuery DOM</title>
+    <!-- 제이쿼리 CDN 링크 -->
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.min.js"
+      integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- 제이쿼리 다운로드 -->
+    <script src="JS/jquery-3.4.1.min.js"></script>
+
+    <style>
+      body {
+        font-size: 17px;
+        font-family: Arial, Helvetica, sans-serif;
+        background: #f4f4f4;
+        line-height: 1.5em;
+      }
+      header {
+        background: #333;
+        color: white;
+        padding: 20px;
+        text-align: center;
+        border-bottom: 4px solid black;
+        margin-bottom: 10px;
+      }
+      #container {
+        width: 90%;
+        margin: auto;
+        padding: 10px;
+      }
+      .myClass {
+        color: skyblue;
+        background: grey;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>JQuery DOM</h1>
+    </header>
+    <div id="container">
+      <button id="btn1">버튼1</button>
+      <p class="para1">첫번째 문장입니다.</p>
+      <p class="para2">두번째 문장입니다.</p>
+      <div id="myDiv"></div>
+      <!-- input -->
+      <input type="text" id="newItem" />
+      <!-- 리스트 -->
+      <ul>
+        <li>List Item 1</li>
+        <li>List Item 2</li>
+        <li>List Item 3</li>
+        <li>List Item 4</li>
+      </ul>
+    </div>
+
+    <!-- JQuery,JavaScript 기본위치 : body태그가 끝나는 지점 바로 위-->
+    <script>
+      $(Document).ready(function() {
+        //CSS 멀티 속성 변화
+        $("p.para1").css({
+          color: "red",
+          background: "yellowgreen"
+        });
+        //클래스 추가 / 제거
+
+        $("#btn1").on("click", function() {
+          $("p.para2").toggleClass("myClass");
+        });
+
+        // $("#myDiv").text("안녕하세요");
+        $("#myDiv").html("<h1>안녕하세요</h1>");
+        console.log($("#myDiv").text());
+
+        //리스트 내용추가
+        $("ul").append("<li>리스트 내용 추가</li>");
+        $("ul").prepend("<li>리스트 내용 추가</li>");
+
+        //문장의 순서를 변경
+        $(".para1").appendTo(".para2");
+        $(".para1").prependTo(".para2");
+
+        //요소 추가
+        $("ul").before("<h4>앞쪽에추가</h4>");
+        $("ul").after("<h4>뒷쪽에추가</h4>");
+
+        // //요소 삭제
+        // $("ul").detach();
+        // //내용 제거
+        // $("ul").empty();
+
+        //input창에 내용추가 -> 리스트
+        $("#newItem").on("keyup", function(e) {
+          var code = e.which;
+          if (code == 13) {
+            //13 = 엔터키
+            e.preventDefault();
+            $("ul").append("<li>" + e.target.value + "</li>");
+          }
+        });
+      });
+    </script>
+  </body>
+</html>

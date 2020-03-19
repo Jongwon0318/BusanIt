@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>cssBorder</title>
+    <style>
+        body {
+          padding:0px;
+          margin:0px;
+          box-sizing: border-box;
+          font-size: 2em;
+        }
+        .box {
+          margin: 10px;
+          background: lightgray;
+          width: 250px;
+          padding-top:20px;
+          text-align: center;
+          display: inline-block;
+          height: 200px;
+        }
+        .box-1 {
+          border: none;
+        }
+        .box-2 {
+          border: 5px hidden red;
+        }
+        .box-3 {
+          border: 5px solid orange;
+        }
+        .box-4 {
+          border: 5px dashed orange;
+        }
+        .box-5 {
+          border: 5px dotted orange;
+        }
+        .one {
+          border-radius: 20px;
+          background: yellowgreen;
+        }
+        .two {
+          border-radius: 20px;
+          border: 3px solid #BADA55;
+        }
+        .three {
+           border-radius: 5px 10px 15px 20px; /* top left, top right, bottom right, bottom left */
+        }
+    </style>
+</head>
+<body>
+    <div class="box box-1">none</div>
+    <div class="box box-2">hidden</div>
+    <div class="box box-3">solid</div>
+    <div class="box box-4">dashed</div>
+    <div class="box box-5">dotted</div>
+    <div class="box one"></div>
+    <div class="box two"></div>
+    <div class="box three"></div>
+</body>
+</html>

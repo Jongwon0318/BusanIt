@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>숙소, 체험, 장소를 모두 한 곳에서 - 에어비엔비</title> 
+    <link rel="shortcut icon" href="images/airbnb.ico" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+    <!-- svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox-->
+</head>
+<body>
+    <!-- 회원가입 팝업창 시작 display:none -->
+   <div id="join-popup" class="join-popup">
+		<!-- 회원가입 윈도우창 시작  -->
+        <div class="join-window">
+			<div class="close-button">
+                <span onclick="join_close();" class="close">&times;</span>
+			</div>
+			<div class="fbook-login form">
+                <div class="logo">
+                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" 
+                version="1.1" viewBox="0 0 32 32" role="presentation" aria-hidden="true" focusable="false" style="height: 18px; width: 18px; display: block; fill: currentcolor;"><path d="m8 14.41v-4.17c0-.42.35-.81.77-.81h2.52v-2.08c0-4.84 2.48-7.31 7.42-7.35 1.65 0 3.22.21 4.69.64.46.14.63.42.6.88l-.56 4.06c-.04.18-.14.35-.32.53-.21.11-.42.18-.63.14-.88-.25-1.78-.35-2.8-.35-1.4 0-1.61.28-1.61 1.73v1.8h4.52c.42 0 .81.42.81.88l-.35 4.17c0 .42-.35.71-.77.71h-4.21v16c0 .42-.35.81-.77.81h-5.21c-.42 0-.8-.39-.8-.81v-16h-2.52a.78.78 0 0 1 -.78-.78" fill-rule="evenodd"></path></svg>   
+                </div>
+                &nbsp;&nbsp;페이스북 계정으로 로그인
+			</div>
+			<div class="google-login form">
+                <div class="logo">
+                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" 
+                    version="1.1" viewBox="0 0 18 18" role="presentation" aria-hidden="true" focusable="false" style="height: 18px; width: 18px; display: block;"><g fill="none" fill-rule="evenodd"><path d="M9 3.48c1.69 0 2.83.73 3.48 1.34l2.54-2.48C13.46.89 11.43 0 9 0 5.48 0 2.44 2.02.96 4.96l2.91 2.26C4.6 5.05 6.62 3.48 9 3.48z" fill="#EA4335"></path><path d="M17.64 9.2c0-.74-.06-1.28-.19-1.84H9v3.34h4.96c-.1.83-.64 2.08-1.84 2.92l2.84 2.2c1.7-1.57 2.68-3.88 2.68-6.62z" fill="#4285F4"></path><path d="M3.88 10.78A5.54 5.54 0 0 1 3.58 9c0-.62.11-1.22.29-1.78L.96 4.96A9.008 9.008 0 0 0 0 9c0 1.45.35 2.82.96 4.04l2.92-2.26z" fill="#FBBC05"></path><path d="M9 18c2.43 0 4.47-.8 5.96-2.18l-2.84-2.2c-.76.53-1.78.9-3.12.9-2.38 0-4.4-1.57-5.12-3.74L.97 13.04C2.45 15.98 5.48 18 9 18z" fill="#34A853"></path><path d="M0 0h18v18H0V0z"></path></g></svg>
+                </div>
+                &nbsp;&nbsp;구글 계정으로 로그인
+			</div>
+			<div class="line-combo">
+            	<div class="line-left"></div>
+				&nbsp;&nbsp;<span>또는</span>&nbsp;&nbsp;
+				<div class="line-right"></div>
+			</div>
+            <div class="email-login form">
+                <div class="logo">
+                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" 
+                    version="1.1" viewBox="0 0 24 24" role="presentation" aria-hidden="true" focusable="false" style="height: 18px; width: 18px; display: block; fill: currentcolor;"><path d="m22.5 4h-21c-.83 0-1.5.67-1.5 1.51v12.99c0 .83.67 1.5 1.5 1.5h20.99a1.5 1.5 0 0 0 1.51-1.51v-12.98c0-.84-.67-1.51-1.5-1.51zm.5 14.2-6.14-7.91 6.14-4.66v12.58zm-.83-13.2-9.69 7.36c-.26.2-.72.2-.98 0l-9.67-7.36h20.35zm-21.17.63 6.14 4.67-6.14 7.88zm.63 13.37 6.3-8.1 2.97 2.26c.62.47 1.57.47 2.19 0l2.97-2.26 6.29 8.1z" fill-rule="evenodd"></path></svg>
+                </div>
+                &nbsp;&nbsp;이메일로 회원 가입
+            </div>
+            <div class="line-full"></div>
+            <div class="AskingAccount form">
+                <div style="font-weight: lighter;">이미 에어비엔비 계정이 있나요?</div> 
+                &nbsp;<a class="login" style="font-weight: bolder;">로그인</a>
+            </div>
+		</div>
+        <!-- 회원가입 윈도우창 끝  -->
+	</div>
+    <!-- 회원가입 팝업창 끝  -->
+    <!-- 로그인 팝업창 시작 display:none -->
+   <div id="join-popup_login" class="join-popup_login">
+		<!-- 로그인 윈도우창 시작  -->
+        <div class="join-window_login">
+			<div class="close-button_login">
+                <span onclick="join_close_login();" class="close_login">&times;</span>
+			</div>
+			<div class="fbook-login_login form_login">
+                <div class="logo_login">
+                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" 
+                version="1.1" viewBox="0 0 32 32" role="presentation" aria-hidden="true" focusable="false" style="height: 18px; width: 18px; display: block; fill: currentcolor;"><path d="m8 14.41v-4.17c0-.42.35-.81.77-.81h2.52v-2.08c0-4.84 2.48-7.31 7.42-7.35 1.65 0 3.22.21 4.69.64.46.14.63.42.6.88l-.56 4.06c-.04.18-.14.35-.32.53-.21.11-.42.18-.63.14-.88-.25-1.78-.35-2.8-.35-1.4 0-1.61.28-1.61 1.73v1.8h4.52c.42 0 .81.42.81.88l-.35 4.17c0 .42-.35.71-.77.71h-4.21v16c0 .42-.35.81-.77.81h-5.21c-.42 0-.8-.39-.8-.81v-16h-2.52a.78.78 0 0 1 -.78-.78" fill-rule="evenodd"></path></svg>   
+                </div>
+                &nbsp;&nbsp;페이스북 계정으로 로그인
+			</div>
+			<div class="google-login_login form_login">
+                <div class="logo_login">
+                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" 
+                    version="1.1" viewBox="0 0 18 18" role="presentation" aria-hidden="true" focusable="false" style="height: 18px; width: 18px; display: block;"><g fill="none" fill-rule="evenodd"><path d="M9 3.48c1.69 0 2.83.73 3.48 1.34l2.54-2.48C13.46.89 11.43 0 9 0 5.48 0 2.44 2.02.96 4.96l2.91 2.26C4.6 5.05 6.62 3.48 9 3.48z" fill="#EA4335"></path><path d="M17.64 9.2c0-.74-.06-1.28-.19-1.84H9v3.34h4.96c-.1.83-.64 2.08-1.84 2.92l2.84 2.2c1.7-1.57 2.68-3.88 2.68-6.62z" fill="#4285F4"></path><path d="M3.88 10.78A5.54 5.54 0 0 1 3.58 9c0-.62.11-1.22.29-1.78L.96 4.96A9.008 9.008 0 0 0 0 9c0 1.45.35 2.82.96 4.04l2.92-2.26z" fill="#FBBC05"></path><path d="M9 18c2.43 0 4.47-.8 5.96-2.18l-2.84-2.2c-.76.53-1.78.9-3.12.9-2.38 0-4.4-1.57-5.12-3.74L.97 13.04C2.45 15.98 5.48 18 9 18z" fill="#34A853"></path><path d="M0 0h18v18H0V0z"></path></g></svg>
+                </div>
+                &nbsp;&nbsp;구글 계정으로 로그인
+			</div>
+			<div class="line-combo_login">
+            	<div class="line-left_login"></div>
+				&nbsp;&nbsp;<span>또는</span>&nbsp;&nbsp;
+				<div class="line-right_login"></div>
+            </div>
+            <input type="email" class="email_address form_login" placeholder="이메일 주소">
+            </input>
+            <input type="password" class="password_confirm form_login" placeholder="비밀번호">
+            </input>
+            <div class="aboutpwd">
+                <span>
+                    <input id="cb1" type="checkbox">
+                    <label for="cb1" style="position: relative; bottom: 4px;">비밀번호 저장</label>
+                </span>
+                <span class="showpwd">비밀번호 보기</span>
+            </div>
+            <br>
+            <div class="phonelogin_asking">
+                <span class="telnumlog" style="color: #008489; font-weight: bold;">전화번호로 로그인</span>
+                <span style="font-size: 15px; font-weight: bolder;">&nbsp;·&nbsp;</span> 
+                <span class="pwdasking" style="color: #008489; font-weight: bold;">비밀번호가 생각나지 않으세요?</span>
+            </div>
+            <div class="email-login_login form_login">
+                로그인
+            </div>
+            <div class="line-full_login"></div>
+            <div class="AskingAccount_login form_login">
+                <div style="font-weight: lighter;">에어비엔비 계정이 없으세요?</div> 
+                &nbsp;<a class="login_login" style="font-weight: bolder;">회원 가입</a>
+            </div>
+		</div>
+        <!-- 로그인 윈도우창 끝  -->
+    </div>
+    
+    <script>
+        var join_popup = document.getElementById('join-popup');
+    	function join_close(){
+    		join_popup.style.display = 'none';
+    	}
+    	function join_open(){
+    		join_popup.style.display = 'block';
+        }
+        
+    	var join_popup_login = document.getElementById('join-popup_login');
+    	function join_close_login(){
+    		join_popup_login.style.display = 'none';
+    	}
+    	function join_open_login(){
+    		join_popup_login.style.display = 'block';
+    	}
+    </script>
+    <!-- 조인 팝업창 끝  -->
+        <!--첫 페이지 시작 -->
+    <header id="main-page" class="main-page">	
+        <!--네비게이션 메뉴 시작 -->
+        <nav class="main-navi">
+            <div class="Logo">
+                <svg class="svgLogo" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" 
+                version="1.1" viewBox="0 0 1000 1000" role="presentation" aria-hidden="true" focusable="false" style="height:1em;width:1em;display:block;fill:white"><path d="m499.3 736.7c-51-64-81-120.1-91-168.1-10-39-6-70 11-93 18-27 45-40 80-40s62 13 80 40c17 23 21 54 11 93-11 49-41 105-91 168.1zm362.2 43c-7 47-39 86-83 105-85 37-169.1-22-241.1-102 119.1-149.1 141.1-265.1 90-340.2-30-43-73-64-128.1-64-111 0-172.1 94-148.1 203.1 14 59 51 126.1 110 201.1-37 41-72 70-103 88-24 13-47 21-69 23-101 15-180.1-83-144.1-184.1 5-13 15-37 32-74l1-2c55-120.1 122.1-256.1 199.1-407.2l2-5 22-42c17-31 24-45 51-62 13-8 29-12 47-12 36 0 64 21 76 38 6 9 13 21 22 36l21 41 3 6c77 151.1 144.1 287.1 199.1 407.2l1 1 20 46 12 29c9.2 23.1 11.2 46.1 8.2 70.1zm46-90.1c-7-22-19-48-34-79v-1c-71-151.1-137.1-287.1-200.1-409.2l-4-6c-45-92-77-147.1-170.1-147.1-92 0-131.1 64-171.1 147.1l-3 6c-63 122.1-129.1 258.1-200.1 409.2v2l-21 46c-8 19-12 29-13 32-51 140.1 54 263.1 181.1 263.1 1 0 5 0 10-1h14c66-8 134.1-50 203.1-125.1 69 75 137.1 117.1 203.1 125.1h14c5 1 9 1 10 1 127.1.1 232.1-123 181.1-263.1z"></path></svg>
+            </div>
+            <div class="itemsflex">
+                <div class="item">
+                    <a href="#">&nbsp;<svg xmlns="http://www.w3.org/2000/svg"   xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1"  viewBox="0 0 12 12" width="0.8571428571428571em"     height="0.8571428571428571em"><path d="M3.48    3.5c.17-.85.43-1.6.75-2.18A5.02 5.02 0 001.67 3.5zm1.03    0h2.98C7.16 2 6.57 1 6 1S4.84 2 4.5 3.5zm4 0h1.82a5.02 5.02 0  00-2.56-2.18c.32.58.58 1.33.75 2.18zm.16 1a13.82 13.82 0 010     3h2.1a5 5 0 000-3zm-1.01 0H4.34a12.43 12.43 0 000 3h3.32a12.43  12.43 0 000-3zm-4.33 0h-2.1a5 5 0 000 3h2.1a13.82 13.82 0    010-3zm5.19 4a7.5 7.5 0 01-.75 2.18 5.02 5.02 0    002.56-2.18zm-1.03 0H4.51C4.84 10 5.43 11 6 11s1.16-1  1.5-2.5zm-4 0H1.66c.57 1 1.48 1.77 2.56 2.18a7.5 7.5 0   01-.75-2.18zM6 12A6 6 0 116 0a6 6 0 010 12z"  fill="currentcolor"></path></svg> 한국어(KR)&nbsp;</a>
+                </div>
+                <div class="item">
+                    <a href="#">&nbsp;\ KRW&nbsp;</a>
+                </div>
+                <div class="item">
+                    <a href="#">&nbsp;숙소 호스팅&nbsp;</a>
+                </div>
+                <div class="item">
+                    <a href="#">&nbsp;체험 호스팅&nbsp;</a>
+                </div>
+                <div class="item">
+                    <a href="#">&nbsp;도움말&nbsp;</a>
+                </div>
+                <div class="item" onclick="join_open();">
+                    <a href="#">&nbsp;회원가입&nbsp;</a>
+                </div>
+                <div class="item" onclick="join_open_login();">	
+                    <a href="#">&nbsp;로그인&nbsp;</a>
+                </div>
+            </div>
+        </nav>	
+        <!--네비게이션 메뉴 끝 -->
+        <div class="main-form">
+            <div class="title">특색 있는 숙소와 즐길<br> 거리를 예약하세요.</div>
+            <div class="destinationdiv">목적지</div>
+            <input class="destination" type="text" placeholder="모든 위치" style="border-radius: 5px; color: lightgrey; font-size: 17px; padding: 15px;"><br>
+            <div class="check">
+                <span>체크인</span>
+                <span></span>
+                <span>체크아웃</span>
+            </div>
+            <div class="checkinboxdiv">
+                <input class="checkinbox" type="text" placeholder="년/월/일" style="border-radius: 5px; border: 1px solid #e4e4e4; border-right: none; color: lightgrey; font-size: 17px; padding: 15px;">
+                <div></div>
+                <input class="checkoutbox" type="text" placeholder="년/월/일" style="border-radius: 5px; border: 1px solid #e4e4e4; color: lightgrey; font-size: 17px; padding: 15px;">
+            </div>
+            <div class="destinationdiv">인원</div>
+            <div class="personnaldiv">
+                <div class="personnal">인원</div>
+            </div>
+            <br>
+            <div class="searchbuttondiv">
+                <div id="searchbutton">검색</div>
+            </div>
+        </div>
+        
+        <div class="bottom-text">
+            오리건에 있는 300개 이상의 <br>독특한 숙소
+        </div>
+    </header>	
+    <!--첫 페이지 끝 -->
+   <!--서브 페이지(sub-page) 시작 -->
+    <main class="sub-page">
+        <!--에어비앤비 둘러보기 시작-->
+    	<section class="look-around">
+    		<div class="text-1">에어비앤비 둘러보기</div>
+    		<div class="wrapper">
+    			<div class="home">
+    				<div class="picture">
+    					<img src="https://a0.muscache.com/im/pictures/8b7519ec-2c82-4c09-8233-fd4d2715bbf9.jpg?aki_policy=x_large" height="85px" alt="">
+    				</div>
+    				<div class="text">
+                        <div class="text-2">숙소</div>
+    				</div>
+                </div>
+                <div class="experience">
+    				<div class="picture">
+    					<img src="https://a0.muscache.com/im/pictures/a77ee672-e790-4362-8cc5-52bec1371ece.jpg?aki_policy=x_large" height="85px" alt="">
+    				</div>
+    				<div class="text">
+                        <div class="text-2">체험</div>
+    				</div>
+                </div>
+                <div class="adventure" style="width: 1200px;">
+    				<div class="picture" style="width: 47%;">
+    					<img src="https://a0.muscache.com/im/pictures/38f2bfd6-1f4d-46d7-babf-61657deef302.jpg?aki_policy=x_large" height="85px" alt="">
+    				</div>
+    				<div class="text">
+                        <div class="text-2">어드벤처</div>
+    				</div>
+    			</div>						
+            </div>	
+       </section>
+       <br><br><br>
+       <!--에어비앤비 둘러보기 끝-->
+       <!--요리경험 시작-->
+       <section class="cookingexp">
+            <div class="cookingbgr">
+                <div class="cookingline">
+                    &nbsp;에어비엔비가 선보입니다.
+                </div>
+                <div class="cookingtitle">
+                    쿠킹을 즐기는 <br>체험
+                </div>
+                <div class="cookinglow">
+                    에어비엔비 체험
+                </div>
+                <button class="specifically">자세히 알아보기</button>
+            </div>
+        </section>
+        <!-- 요리경험 끝 -->
+        <!-- 어드벤쳐시작 -->
+        <section class="airbnbadventure">
+            <div class="line-height">
+                <h1>에어비엔비 어드벤처를 소개합니다.</h1>
+                <h4 style="font-weight: lighter;">현지 전문가가 진행하는 2일 이상의 여행 -액티비티,식사,숙박 포함</h4>
+            </div>
+            <br>
+            <div class="advgrid">
+                <div class="advlo norw">
+                    <img src="https://a0.muscache.com/im/pictures/64c23cf2-4833-4506-ab06-c943c7489709.jpg?aki_policy=poster" alt="">
+                    <br>
+                    <span class="conname">노르웨이</span><br>
+                    <span class="advex">2 Nights PACKAGE All Inclusive</span><br>
+                    <span class='charge'>
+                        1인당 \749,411부터&nbsp;·&nbsp;3일
+                    </span>
+                    <br>
+                    <span class="starspan">
+                        <span style="font-weight: bolder; color: #008489;">5.0★</span>
+                        <span>(1)</span>
+                    </span>
+                </div>
+                <div class="advlo swed">
+                    <img src="https://a0.muscache.com/im/pictures/8d0a8add-0b29-45ad-bf58-ffca8a94d3d7.jpg?aki_policy=poster" alt="">
+                    <br>
+                    <span class="conname">스웨덴</span><br>
+                    <span class="advex">Glamp under the northern lights</span>
+                    <br>
+                    <span class='charge'>
+                        1인당 \2,981,240부터&nbsp;·&nbsp;6일
+                    </span>
+                </div>
+                <div class="advlo gree">
+                    <img src="https://a0.muscache.com/im/pictures/lombard/MtTemplate-1076499-media_library/original/38ee6732-f6bb-47eb-baaf-6bf45f0db580.jpeg?aki_policy=poster" alt="">
+                    <br>
+                    <span class="conname">그리스</span><br>
+                    <span class="advex">Forgotten Greece</span><br>
+                    <span class='charge'>
+                        1인당 \2,673,692부터&nbsp;·&nbsp;6일
+                    </span>
+                </div>
+                <div class="advlo eqad">
+                    <img src="https://a0.muscache.com/im/pictures/e9a6ce71-6dbc-4a43-bf61-4f383e814561.jpg?aki_policy=poster" alt="">
+                    <br>
+                    <span class="conname">에콰도르</span><br>
+                    <span class="advex">
+                        Slow Food Galapagos
+                        <br>Conscience Travel
+                    </span><br>
+                    <span class='charge'>
+                        1인당 \4,854,81부터&nbsp;·&nbsp;6일
+                    </span>
+                </div>
+                <div class="advlo usa">
+                    <img src="https://a0.muscache.com/im/pictures/lombard/MtTemplate-1276197-media_library/original/4ccf5820-ceea-4f2d-9607-6ff3df9724f8.jpeg?aki_policy=poster" alt="">
+                    <br>
+                    <span class="conname">미국</span><br>
+                    <span class="advex">
+                        Jeep Camping Hiking
+                        <br>4x4 GA Mountains
+                    </span><br>
+                    <span class='charge'>
+                        1인당 \182,406부터&nbsp;·&nbsp;2일
+                    </span>
+                    <br>
+                    <span class="starspan">
+                        <span style="font-weight: bolder; color: #008489;">5.0★</span>
+                        <span>(2)</span>
+                    </span>
+                </div>
+            </div>
+            <br><br>
+            <a href="#" class="advlink">어드벤쳐 모두 보기 > </a>
+        </section>
+        <!-- 어드벤쳐끝 -->
+        <br>
+       <!--에어비엔비 플러스 숙소 시작-->
+        <section class="airbnbplus">
+            <div class="line-height">
+                <h1>에어비엔비 플러스 숙소</h1>
+                <h4 style="font-weight: lighter;">퀄리티와 인테리어 디자인이 검증된 숙소 셀렉션</h4>
+            </div>
+            <br>
+            <div class="airbnbplusbackground">
+                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" 
+                version="1.1" viewBox="0 0 470 239" aria-hidden="true" fill="#484848" focusable="false" height="96px" width="188.7866108786611px"><path d="M104.707 148.464c-.512-1.438-1.109-2.83-1.677-4.118a386.734 386.734 0 0 0-2.678-5.889l-.07-.152a1318.773 1318.773 0 0 0-25.22-51.674l-.374-.728c-.9-1.75-1.832-3.56-2.787-5.337-1.116-2.076-2.352-4.275-4.1-6.322-3.766-4.412-8.966-6.842-14.645-6.842s-10.88 2.431-14.648 6.845c-1.746 2.048-2.981 4.245-4.098 6.321a341.749 341.749 0 0 0-2.812 5.387l-.348.676a1319.873 1319.873 0 0 0-25.22 51.673l-.114.25a388.09 388.09 0 0 0-2.632 5.791c-.569 1.288-1.166 2.678-1.678 4.12-1.497 4.213-1.941 8.24-1.359 12.308 1.219 8.513 6.924 15.809 14.89 19.041a24.699 24.699 0 0 0 9.335 1.81c.995 0 2.007-.06 3.007-.176 3.833-.445 7.695-1.75 11.48-3.88 4.629-2.606 9.202-6.425 14.197-11.883 4.996 5.458 9.569 9.277 14.199 11.883 3.784 2.13 7.646 3.435 11.478 3.88 1 .116 2.013.175 3.008.175a24.69 24.69 0 0 0 9.334-1.809c7.965-3.231 13.671-10.528 14.891-19.041.582-4.067.137-8.093-1.36-12.31zm-51.55 6.352c-6.213-7.89-10.2-15.216-11.599-21.358-.587-2.578-.721-4.947-.398-7.041.278-1.812.9-3.431 1.848-4.815 2.145-3.127 5.938-4.994 10.15-4.994 4.209 0 8.002 1.867 10.147 4.996.949 1.383 1.57 3.003 1.849 4.815.322 2.097.187 4.466-.4 7.044-1.401 6.141-5.387 13.465-11.598 21.353zm45.897 5.35a17.098 17.098 0 0 1-10.46 13.375c-2.745 1.114-5.746 1.506-8.796 1.153-2.919-.34-5.792-1.322-8.783-3.005-4.14-2.33-8.331-5.908-13.048-11.157 7.508-9.275 12.197-17.824 13.933-25.439.794-3.481.962-6.774.5-9.788-.448-2.908-1.474-5.548-3.05-7.846-3.511-5.123-9.565-8.182-16.195-8.182-6.627 0-12.68 3.058-16.192 8.18-1.576 2.298-2.601 4.938-3.048 7.845-.464 3.01-.297 6.302.496 9.784 1.735 7.618 6.424 16.169 13.934 25.447-4.716 5.248-8.907 8.825-13.048 11.156-2.99 1.683-5.863 2.666-8.782 3.005-3.049.353-6.052-.039-8.797-1.153a17.095 17.095 0 0 1-10.46-13.376c-.418-2.923-.095-5.742 1.018-8.872.41-1.154.889-2.286 1.483-3.632.84-1.903 1.732-3.838 2.595-5.709l.116-.251a1318.605 1318.605 0 0 1 25.196-51.625l.35-.682a336.93 336.93 0 0 1 2.765-5.295c.972-1.808 1.95-3.555 3.236-5.063 2.403-2.815 5.563-4.303 9.14-4.303 3.575 0 6.734 1.487 9.137 4.302 1.287 1.508 2.265 3.255 3.236 5.061a333.39 333.39 0 0 1 2.74 5.247l.377.734a1317.39 1317.39 0 0 1 25.196 51.625l.071.155a379.704 379.704 0 0 1 2.64 5.805c.595 1.347 1.075 2.48 1.484 3.63 1.111 3.132 1.434 5.951 1.016 8.873zm194.117-43.622c0-33.068 4.234-63.313 11.695-83.88 5.04-14.316 11.492-25.002 19.961-25.002 7.46 0 11.694 8.67 11.694 22.583 0 17.744-6.049 38.713-15.928 59.482-7.26 15.323-16.736 30.244-27.02 43.754-.2-5.242-.402-10.888-.402-16.937zm-43.352 65.732c12.704-7.057 25.608-17.946 37.504-31.252 3.63 22.985 11.292 30.446 20.365 30.446 10.082 0 19.76-9.276 28.229-26.01v3.225c0 17.34 7.863 22.785 14.92 22.785 10.485 0 20.769-11.695 29.036-30.85-.202 3.428-.202 5.04-.202 7.259 0 17.542 6.452 22.784 13.912 22.784 6.856 0 12.502-4.84 18.55-14.921 1.412-2.419-.402-5.646-3.225-5.646-1.412 0-2.823.807-3.428 2.017-3.63 6.452-7.057 10.888-11.291 10.888-5.848 0-6.452-8.47-6.452-15.122 0-9.679 1.225-25.472 3.024-34.883.48-2.515-1.412-4.637-3.831-4.637-2.017 0-3.63 1.41-4.033 3.024-7.662 27.826-19.558 52.425-30.85 52.425-5.645 0-8.065-6.654-8.065-15.324 0-9.88 2.017-21.777 5.645-35.085.606-2.42-1.209-4.839-3.83-4.839-1.613 0-3.428 1.009-3.832 2.621-9.072 30.245-21.776 52.627-33.269 52.627-8.267 0-12.5-11.292-14.315-29.237 13.105-15.526 24.8-33.471 33.47-51.619 10.284-21.977 16.736-44.157 16.736-62.707C344.587 6.654 334.505 0 325.23 0c-10.888 0-20.97 10.283-28.027 29.842-7.46 21.373-12.098 52.424-12.098 86.702 0 9.275.404 17.34 1.008 24.397-12.5 14.316-26.212 26.616-39.923 34.48-1.814 1.008-2.62 3.428-1.613 5.242 1.008 1.815 3.427 2.621 5.242 1.613zm-68.353 56.054c2.218 0 4.235-1.815 4.235-4.033 0-17.743.806-35.487 2.62-52.827 36.698-3.226 78.839-38.31 78.839-74.806 0-25.204-18.147-39.52-42.141-39.52-23.39 0-53.03 14.719-77.63 39.117-1.612 1.41-1.612 4.032 0 5.645 1.413 1.613 4.034 1.613 5.647 0 22.986-22.38 50.207-36.697 71.781-36.697 19.357 0 33.874 11.493 33.874 31.455 0 32.26-36.899 63.11-69.563 66.539 3.024-25.608 7.864-50.408 14.518-72.185.604-2.016-.807-4.436-2.823-5.042-2.218-.603-4.637.606-5.243 2.622-6.654 22.583-11.694 48.19-14.921 75.008-7.863-.403-14.719-2.42-22.38-6.855-2.017-1.009-4.436-.202-5.647 1.613-1.008 2.016-.2 4.436 1.614 5.645 9.073 4.637 16.937 7.057 25.607 7.662-1.613 17.34-2.622 35.084-2.622 52.626 0 2.218 2.017 4.033 4.235 4.033zm274.22-110.697c1.614 1.21 4.235 1.008 5.444-.604 5.444-6.855 8.671-14.115 8.671-20.365 0-9.275-6.251-15.122-17.743-15.122-22.18 0-43.554 22.582-43.554 39.923 0 11.09 7.662 18.55 22.987 21.373l9.476 1.613c9.88 1.613 16.534 5.04 16.534 11.896 0 7.461-8.267 11.493-16.937 11.493-6.452 0-12.099-2.218-16.534-5.242-1.613-1.21-4.032-.807-5.242.806s-.807 4.033.806 5.242c5.646 4.235 12.905 6.856 20.97 6.856 14.315 0 25.003-8.065 25.003-19.558 0-9.275-7.058-16.333-23.39-19.155l-9.477-1.614c-9.678-1.613-16.13-5.846-16.13-13.912 0-13.913 17.744-32.06 35.285-32.06 6.05 0 9.88 2.622 9.88 8.066 0 4.234-2.42 9.679-6.653 14.92-1.21 1.614-1.009 4.033.604 5.444z"></path></svg>
+                <br>
+                <button class="airbnbplusbut">숙소 둘러보기 ></button>
+            </div>
+        </section>
+        <br>
+       <!--에어비엔비 플러스 숙소 끝-->
+       <!-- 최고 평점을 받은 숙소 시작 -->
+        <section class="bestgrade">
+            <div class="line-height">
+                <h1>최고 평점을 받은 숙소</h1>
+                <h4 style="font-weight: lighter;">최고의 평점을 받은 전 세계의 숙소를 둘러보세요.</h4>
+            </div>
+            <br>
+            <div class="container11">
+                <div class="air h1">
+                    <img src="https://a0.muscache.com/im/pictures/56bff280-aba3-42f3-af42-adc2814a72f4.jpg?aki_policy=large">
+                    <br>
+                    <div class="explanation">
+                        <button class="superhost">슈퍼호스트</button>
+                        <span class="explain">Orondo</span>
+                        <span class="right"><span class="star">★</span>4.87</span>
+                    </div>
+                    Underground Hygge
+                </div>
+                <div class="air h2">
+                    <img src="https://a0.muscache.com/im/pictures/812e040f-6f6f-4cae-ad67-66c050b57c1f.jpg?aki_policy=large">
+                    <br>
+                    <div class="explanation">
+                        <button class="superhost">슈퍼호스트</button>
+                        <span class="explain">조슈아 트리</span>
+                        <span class="right"><span class="star">★</span>4.87</span>
+                    </div>
+                    The Joshua Tree House
+                </div>
+                <div class="air h3">
+                    <img src="https://a0.muscache.com/im/pictures/65441227/bb1eb2dd_original.jpg?aki_policy=large">
+                    <br>
+                    <div class="explanation">
+                        <button class="superhost">슈퍼호스트</button>
+                        <span class="explain">아르메니아</span>
+                        <span class="right"><span class="star">★</span>4.93</span>
+                    </div>
+                    Romantic Cabana With View
+                </div>
+                <div class="air h4">
+                    <img src="https://a0.muscache.com/im/pictures/cd17b75f-9aee-4f68-b80d-dde84996fb4b.jpg?aki_policy=large">
+                    <br>
+                    <div class="explanation">
+                        <button class="superhost">슈퍼호스트</button>
+                        <span class="explain">무헤레스 섬</span>
+                        <span class="right"><span class="star">★</span>4.76</span>
+                    </div>
+                    The World Famous Seashell   ...
+                </div>
+                <div class="air h5">
+                    <img src="https://a0.muscache.com/im/pictures/25625163/d4833a1c_original.jpg?aki_policy=large">
+                    <br>
+                    <div class="explanation">
+                        <button class="superhost">슈퍼호스트</button>
+                        <span class="explain">Akureyri</span>
+                        <span class="right"><span class="star">★</span>4.75</span>
+                    </div>
+                    Amazing View - Moderne...
+                </div>
+                <div class="air h6">
+                    <img src="https://a0.muscache.com/im/pictures/15273358/d7329e9a_original.jpg?aki_policy=large">
+                    <br>
+                    <div class="explanation">
+                        <button class="superhost">슈퍼호스트</button>
+                        <span class="explain">오스투니</span>
+                        <span class="right"><span class="star">★</span>4.93</span>
+                    </div>
+                    I SETTE CONI - TRULLO EDERA
+                </div>
+                <div class="air h7">
+                    <img src="https://a0.muscache.com/4ea/air/v2/pictures/dc09ee21-27e9-4dcd-9b59-7ba7ade0563f.jpg?t=r:w1200-h720-sfit,e:fjpg-c90">
+                    <br>
+                    <div class="explanation" style="grid-template-columns: 20% 45% 30%; grid-gap: 2%;">
+                        <button class="PLUShost">PLUS</button>
+                        <span class="explain">Mayne Island</span>
+                        <span class="right"><span class="star">★</span>4.97</span>
+                    </div>
+                    Cob Cottage
+                </div>
+                <div class="air h8">
+                    <img src="https://a0.muscache.com/im/pictures/45680811/f4987a12_original.jpg?aki_policy=large">
+                    <br>
+                    <div class="explanation" style="grid-template-columns:40% 57%;">
+                        <span class="explain">Pioneer Town</span>
+                        <span class="right"><span class="star">★</span>4.93</span>
+                    </div>
+                    Off-grid itHouse
+                </div>
+                <a href="#" class="link11">모두 보기(2,000개 이상) ></a>
+            </div>
+        </section>
+        <br><br>
+        <!-- 최고 평점을 받은 숙소 끝 -->
+    </main>
+    <!--서브 페이지(sub-page) 끝 -->
+    
+</body>
+</html>

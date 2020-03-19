@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>cssFlex1-2</title>
+    <style>
+        html, body {
+			background-color: #ffeead;
+			margin: 10px;
+		}
+		.container > div {
+			padding: 20px;
+			text-align: center;
+			font-size: 2em;
+			color: #ffeead;
+		}
+        .home {
+			background-color: #96ceb4;	
+		}
+		.search {
+			background-color: #ff6f69;
+		}
+		.logout {
+			background-color: skyblue;
+            margin-left: auto;
+		}
+		.container {
+			border: 5px solid #ffcc5c;
+            display: flex;
+            justify-content: flex-start;
+		}
+    </style>
+</head>
+<body>
+    <nav class="container">
+		<div class="home">Home</div>
+		<div class="search">Search</div>
+		<div class="logout">Logout</div>
+	</nav>
+</body>
+</html>

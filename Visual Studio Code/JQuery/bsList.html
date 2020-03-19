@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- 위 3개의 메타 태그는 head 태그의 처음에 와야합니다 -->
+    <title>bsList</title>
+    <link rel="stylesheet" href="./css/bootstrap.min.css" />
+    <style>
+      /* CSS작성 */
+      .list-group > a.list-group-item {
+        text-decoration: none;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- HTML 작성 -->
+    <div class="container">
+      <h3><code>List 1 : list-group / list-group-item</code></h3>
+      <ul class="list-group mb-5">
+        <li class="list-group-item">My List Item One</li>
+        <li class="list-group-item active">My List Item Two</li>
+        <li class="list-group-item">My List Item Three</li>
+        <li class="list-group-item">My List Item Four</li>
+        <li class="list-group-item">My List Item Five</li>
+      </ul>
+      <h3><code>List 2</code></h3>
+      <ul class="list-group mb-5">
+        <a href="#" class="list-group-item">My List Item One</a>
+        <a href="#" class="list-group-item">My List Item Two</a>
+        <a href="#" class="list-group-item active">My List Item Three</a>
+        <a href="#" class="list-group-item">My List Item Four</a>
+        <a href="#" class="list-group-item">My List Item Five</a>
+      </ul>
+      <h3><code>List 3</code></h3>
+      <ul class="list-group mb-5">
+        <li class="list-group-item">Regular List Item</li>
+        <li class="list-group-item list-group-item-primary">
+          Primary List Item
+        </li>
+        <li class="list-group-item list-group-item-secondary">
+          Secondary List Item
+        </li>
+        <li class="list-group-item list-group-item-info">Info List Item</li>
+        <li class="list-group-item list-group-item-warning">
+          Warning List Item
+        </li>
+        <li class="list-group-item list-group-item-danger">Danger List Item</li>
+        <li class="list-group-item list-group-item-light">Light List Item</li>
+        <li class="list-group-item list-group-item-dark">Dark List Item</li>
+      </ul>
+      <h3><code>List 4</code></h3>
+      <ul class="list-group-flush mb-5">
+        <li class="list-group-item">My List Item One</li>
+        <li class="list-group-item d-flex">My List Item Two</li>
+        <li class="list-group-item">My List Item Three</li>
+        <li class="list-group-item">My List Item Four</li>
+        <li class="list-group-item">My List Item Five</li>
+      </ul>
+      <h3><code>List 5</code></h3>
+      <ul class="b list-group mb-5">
+        <li class="a list-group-item">My List Item One</li>
+        <li class="a list-group-item d-flex">
+          <span class="mr-auto">My List Item Two</span>
+          <span class="badge badge-primary ml-auto align-self-center">70</span>
+        </li>
+        <li class="a list-group-item">My List Item Three</li>
+        <li class="a list-group-item">My List Item Four</li>
+        <li class="a list-group-item">My List Item Five</li>
+      </ul>
+    </div>
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="./js/jquery-3.4.1.min.js"></script>
+    <script src="./js/bootstrap.bundle.min.js"></script>
+
+    <script>
+      // 자바스크립트 작성
+      $(document).ready(function() {
+        $(".b>li").on("mouseenter", function() {
+          $(this).addClass("active");
+        });
+        $(".b>li").on("mouseleave", function() {
+          $(this).removeClass("active");
+        });
+      });
+    </script>
+  </body>
+</html>

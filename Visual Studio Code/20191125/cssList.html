@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>cssList</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
+    <style>
+    ul.myList, ol.myList{
+        list-style: none;
+        margin: 0px;
+        padding: 0px; /* margin,padding 초기화(List에 기본적으로 margin과 padding이 있음) */
+    }
+    ul.myList li, ol.myList li{
+        padding: 5px;
+        margin-bottom: 5px;
+        border-bottom: 1.5px solid lightgray;
+    }
+    ul.myList li:first-child, ol.myList li:first-child{
+        color: skyblue;
+    }
+    ul.myList li:nth-child(2), ol.myList li:nth-child(2){
+        color: slateblue;
+    }
+    ul.myList li:last-child, ol.myList li:last-child{
+        color: steelblue;
+    }
+    /* ul.myList li:before, ol.myList li:before{
+        color: black;
+        content: ">";
+    } */
+    ul.myList li:before, ol.myList li:before{
+        font-size: 30px;
+        content: "\f17c";
+        padding-right: 10px;
+        font-family: FontAwesome;
+    }
+    </style>
+</head>
+<body>
+    <!-- ul>li{순서 없는 목록의 아이템 $}*3 -->
+    <ul class="myList">
+        <li>순서 없는 목록의 아이템 1</li>
+        <li>순서 없는 목록의 아이템 2</li>
+        <li>순서 없는 목록의 아이템 3</li>
+    </ul>
+    <ol class="myList">
+        <li>순서 있는 목록의 아이템 1</li>
+        <li>순서 있는 목록의 아이템 2</li>
+        <li>순서 있는 목록의 아이템 3</li>
+    </ol>
+    
+</body>
+</html>

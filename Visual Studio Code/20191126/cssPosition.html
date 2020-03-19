@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>cssPosition</title>
+    <style>
+        .container {
+          width: 600px;
+          margin: 0 auto;
+          height: 300px;
+          /* position: relative;의 경우 .absolute는 body태그를 기준으로 적용된다. */
+          position: relative;
+          border: 2px solid gray;
+        }
+        .box {
+          width: 100px;
+          height: 100px;
+        }
+        .red {
+          background: tomato;
+        }
+        .green {
+          background: yellowgreen;
+        }
+        .blue {
+          background: skyblue;
+        }
+        .relative {
+          position: relative;
+          top: 35px;
+          left: 55px;
+          /* top bottom left right 모두 사용 가능 */
+        }
+        .absolute {
+          position: absolute;
+          top: 15px;
+          left: 25px;
+        }
+        .fixed {
+            /* 화면에서 항상 그위치에. */
+          background: violet;
+          position: fixed;
+          bottom : 15%;
+          right : 15%;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="box red">1</div>
+        <!-- absolute가 있는 요소의 상위요소를 기준으로 적용됨. 이 경우 div.container -->
+        <div class="box green absolute">2</div>
+        <div class="box blue relative">3</div>
+        <div class="box fixed">4</div>
+    </div>
+</body>
+</html>

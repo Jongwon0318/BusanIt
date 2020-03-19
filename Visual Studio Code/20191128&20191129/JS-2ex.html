@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Javascript</title>
+</head>
+<body>
+    <script> 
+        let student=['홍길동','김유신','이순신'];
+        document.write("배열 만들기"+'<br>');
+        document.write(student+'<br>');
+        document.write("배열 인덱스 확인"+'<br>');
+        document.write(student[0]+'<br>');
+        document.write(student[1]+'<br>');
+        document.write(student[2]+'<br>');
+        student.push('강감찬');
+        student.unshift('문익점'+'<br>');
+        document.write(student.shift('문익점'));
+        document.write(student+'<br>');
+        student.unshift('문익점');
+        document.write(student+'<br>');
+        student.pop('강감찬')
+        document.write(student+'<br>');
+        student.shift('문익점');
+        document.write(student);
+    </script>
+</body>
+</html>

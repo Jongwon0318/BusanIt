@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Psuedo-class</title>
+    <style>
+        .d1{
+            background-color: green;
+            color: white;
+            padding: 25px;
+            text-align: center;
+            cursor: pointer;
+        }
+        .d1:hover{
+            background-color: blue;
+        }
+        .p1{
+            display: none;
+            background-color: yellow;
+            padding: 20px;
+        }
+        .d2{
+            cursor: pointer;
+        }
+        .d2:hover + .p1{
+            display: block;
+        }
+        
+        .i1:focus{
+            background-color: yellow;
+        }
+    </style>
+</head>
+<body>
+    <p>마우스를 올리면 배경색이 변함</p>
+
+    <div class="d1">마우스를 올려주세요</div>
+    
+    <br><br><br>
+    
+    <div class="d2">마우스를 올리면</div>
+
+    <p class="p1">문장이 나타남</p>
+    
+    <br><br><br>
+
+    <p class="p2">입력창을 선택하면 배경색이 바뀜</p>
+    <form>
+        이름: <input class="i1" type="text" name="firstname"><br>
+        번호: <input class="i1" type="text" name="lastname">
+    </form>
+</body>
+</html>

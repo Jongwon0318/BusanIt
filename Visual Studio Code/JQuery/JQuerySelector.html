@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <title>JQuery Selector</title>
+    <!-- 제이쿼리 CDN 링크 -->
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.min.js"
+      integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- 제이쿼리 다운로드 -->
+    <script src="JS/jquery-3.4.1.min.js"></script>
+
+    <style>
+      body {
+        font-size: 17px;
+        font-family: Arial, Helvetica, sans-serif;
+        background: #f4f4f4;
+        line-height: 1.5em;
+      }
+      header {
+        background: #333;
+        color: white;
+        padding: 20px;
+        text-align: center;
+        border-bottom: 4px solid black;
+        margin-bottom: 10px;
+      }
+      #container {
+        width: 90%;
+        margin: auto;
+        padding: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>JQuery Selector</h1>
+    </header>
+    <div id="container">
+      <h1 id="heading1">Title1</h1>
+      <p id="para1">
+        Lorem ipsum, dolor sit amet <span>consectetur</span> consectetur
+        adipisicing elit. Quibusdam harum, sit, ipsam placeat itaque at
+        necessitatibus cupiditate voluptatem labore optio, error culpa animi
+        minus. Mollitia itaque vel labore nihil cum quasi magni
+        <span>explicabo</span> explicabo error maxime at, necessitatibus illum
+        ut, eveniet iure. Reiciendis deserunt fugit nulla natus eum nostrum sed
+        numquam molestiae quae itaque est, debitis odit sit. Iure, dolores ab
+        minus, ex omnis voluptatum blanditiis labore ea ipsum aliquam nemo
+        praesentium et. Error quod quidem ad cumque reprehenderit voluptas.
+        Maxime perferendis tempore quod doloribus dolorem! Dolores illo
+        consectetur quis nostrum unde, vitae facilis quod quisquam laboriosam,
+        quae voluptatibus, amet delectus!
+      </p>
+      <h1 class="heading2">Title2</h1>
+      <p class="para2">
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Exercitationem
+        ipsa ipsum doloribus velit natus, error illum mollitia repudiandae nihil
+        vitae eligendi pariatur <span>dicta</span> dicta eaque quo autem nisi
+        quos culpa voluptas, iste, atque odit rem blanditiis. Rem pariatur id
+        rerum omnis. Nemo laboriosam provident dolore! Fuga modi amet ipsam.
+        Quidem laborum sequi voluptatum velit
+        <span>reprehenderit</span> reprehenderit vel eum animi voluptate nisi
+        dolores! Molestias dolorem, deserunt quo aspernatur aut voluptatum sunt
+        vel totam ipsam, sint laboriosam odit aliquid voluptates numquam,
+        voluptate laudantium? Magnam voluptatum numquam nulla ab veniam error
+        necessitatibus doloremque, rem aut commodi! Laborum, consequatur.
+        Laborum omnis quas corrupti rerum minus similique.
+      </p>
+      <!-- 리스트 -->
+      <ul id="list">
+        <li>list item 1</li>
+        <li>list item 2</li>
+        <li>list item 3</li>
+        <li>list item 4</li>
+        <li>list item 5</li>
+        <li>list item 6</li>
+        <li>list item 7</li>
+        <li>list item 8</li>
+        <li>list item 9</li>
+        <li>list item 10</li>
+      </ul>
+    </div>
+    <!-- input -->
+    <input type="button" value="Button" />
+    <input type="text" />
+    <input type="submit" value="Submit" />
+    <!-- link -->
+    <a href="https://www.daum.net">다음</a>
+    <a href="https://www.naver.com">네이버</a>
+    <!-- JQuery,JavaScript 기본위치 : body태그가 끝나는 지점 바로 위-->
+    <script>
+      // $("h1").hide();
+      // $("h1#heading1").hide();
+      // $("h1.heading2").hide();
+      // $("p span").css("color", "red");
+      $("ul#list li:first, ul#list li:last").css("color", "red");
+      $("ul#list li:even").css("background-color", "yellowgreen");
+      $("ul#list li:odd").css("background-color", "yellow");
+      $("ul#list li:nth-child(3n)").css("list-style", "none");
+      // $(":button").hide(); 타입선택
+
+      //속성선택
+      $("[href]").css("color", "red");
+      $('[href="https://www.naver.com"]').css("color", "black");
+
+      //전체선택
+      // $("*").hide();
+    </script>
+  </body>
+</html>

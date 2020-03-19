@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+	<title>Javascript</title>
+</head>
+<body>
+	<div id="eID">
+		<div class="eClass">Element1</div>
+		<div class="eClass">Element2</div>
+		<div class="eClass">Element3</div>
+		<div class="eClass">Element4</div>
+		<div class="eClass">Element5</div>
+		<div class="eClass">Element6</div>
+		<div class="eClass">Element7</div>
+	</div>
+	<script>
+		var eID=document.getElementById('eID');
+		eID.style.background='grey';
+
+		var eClass=document.querySelectorAll('.eClass');
+		// for (let i = 0; i < eClass.length; i++) {
+		// 	eClass[i].style.color='red';
+		// }
+		var eColor=['rgb(255,0,0)','rgb(255,50,0)','rgb(255,255,0)','rgb(0,255,0)','blue','darkblue','purple'];
+		for (let i=0; i<eClass.length; i++) {
+			eClass[i].style.color=eColor[i];
+		}
+		// eClass[0].style.color='rgb(255,0,0)';
+		// eClass[1].style.color='rgb(255,50,0)';
+		// eClass[2].style.color='rgb(255,255,0)';
+		// eClass[3].style.color='rgb(0,255,0)';
+		// eClass[4].style.color='blue';
+		// eClass[5].style.color='darkblue';
+		// eClass[6].style.color='purple';
+	</script>
+</body>
+</html>

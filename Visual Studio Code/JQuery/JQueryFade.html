@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <title>JQueryFade</title>
+    <!-- 제이쿼리 CDN 링크 -->
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.min.js"
+      integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- 제이쿼리 다운로드 -->
+    <script src="JS/jquery-3.4.1.min.js"></script>
+
+    <style>
+      #box {
+        background: #333;
+        color: white;
+        width: 300px;
+        height: 90px;
+        padding: 40px;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>효과 및 애니메이션</h1>
+    </header>
+    <div id="container">
+      <button id="btnFadeOut">Fade Out</button>
+      <button id="btnFadeIn">Fade In</button>
+      <button id="btnFadeTog">Fade Toggle</button>
+      <hr />
+      <div id="box"><h1>페이드 효과 연습</h1></div>
+    </div>
+    <!-- JQuery,JavaScript 기본위치 : body태그가 끝나는 지점 바로 위-->
+    <script>
+      $(document).ready(function() {
+        $("#btnFadeOut").on("click", function() {
+          $("#box").fadeOut(3000, function() {
+            $("#btnFadeOut").text("사라짐");
+          });
+        });
+        $("#btnFadeIn").on("click", function() {
+          $("#box").fadeIn(3000, function() {
+            $("#btnFadeIn").text("사라짐");
+          });
+        });
+        $("#btnFadeTog").on("click", function() {
+          $("#box").fadeToggle(1000, function() {
+            $("#btnFadeTog").text("사라짐");
+          });
+        });
+      });
+    </script>
+  </body>
+</html>

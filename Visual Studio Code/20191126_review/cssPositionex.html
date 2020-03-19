@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>cssPositionex</title>
+    <style>
+        .container{
+            width: 400px;
+            height: 400px;
+            position: relative;
+            border: 1px solid black;
+            
+        }
+        .center{
+            width: 200px;
+            height: 200px;
+            position: relative;
+            top: 100px;
+            left: 100px;
+            border: 1px solid black;
+        }
+        .box{
+            width: 100px;
+            height: 100px;
+        }
+        .blue{
+            background-color: lightblue;
+            position: absolute;
+        }
+        .green{
+            background-color: lightgreen;
+            position: absolute;
+            right: 0;
+        }
+        .yellow{
+            background-color: yellow;
+            position: absolute;
+            right: 0px;
+            bottom: 0px;
+        }
+        .red{
+            background-color: lightpink;
+            position: absolute;
+            bottom: 0px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="box blue"></div>
+        <div class="box green"></div>
+        <div class="box yellow"></div>
+        <div class="box red"></div>
+        <div class="center">
+            <div class="box blue"></div>
+            <div class="box green"></div>
+            <div class="box yellow"></div>
+            <div class="box red"></div>
+        </div>
+    </div>
+</body>
+</html>

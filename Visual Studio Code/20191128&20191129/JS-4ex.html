@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Javascript</title>
+</head>
+<body>
+	<script>
+		function ask(question, yes, no){
+			if(confirm(question)) {
+				yes();
+			}
+			else {
+				no();
+			}
+		}
+		function agree(){
+			alert('동의했습니다.');
+		}
+		function cancel(){
+			alert('취소했습니다.');
+		}
+		ask('동의하세요?',agree,cancel);
+	</script>
+</body>
+</html>

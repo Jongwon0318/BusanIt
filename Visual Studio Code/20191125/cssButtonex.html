@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>cssButtonex</title>
+    <style>
+    .button{
+        padding: 20px 40px;
+        border-radius: 8px;
+        margin: 4px 2px;
+        text-decoration: none;
+        text-align: center;
+        color: white;
+        font-size: 20px;
+        cursor: pointer;
+        transition-duration: 4s;
+    }
+    #red{
+        background-color: red;
+        border: 1px solid red;
+    }
+    #red:hover{
+        background-color: blue;
+    }
+    #blue{
+        background-color: blue;
+        border: 1px solid blue;
+    }
+    #green{
+        background-color: green;
+        border: 1px solid green;
+    }
+    .buttons{
+        padding: 10px 20px;
+        font-size: 10px;
+        text-align: center;
+        margin: 2px 1px;
+        cursor:pointer;
+        transition-duration: 3s;
+    }
+    .green{
+        background-color: white;
+        border: 1px solid green;
+        color: green;
+    }
+    .green:hover{
+        background-color: green;
+    }
+    .blue{
+        background-color: white;
+        border: 1px solid blue;
+        color: blue;
+    }
+    .blue:hover{
+        background-color: blue;
+    }
+    .red{
+        background-color: white;
+        border: 1px solid red;
+        color: red;
+    }
+    .red:hover{
+        background-color: red;        
+    }
+    .gray{
+        background-color: white;
+        border: 1px solid gray;
+        color: gray;
+    }
+    .gray:hover{
+        background-color: gray;        
+    }
+    .black{
+        background-color: white;
+        border: 1px solid black;
+        color: black;
+    }
+    .black:hover{
+        background-color: black;        
+    }
+    </style>
+</head>
+<body>
+    <button href="https://www.google.com" class="button" id="red">Red</button>
+    <button href="https://www.google.com" class="button" id="blue">Blue</button>
+    <button href="https://www.google.com" class="button" id="green">Green</button>
+
+    <br><br>
+
+    <button class="buttons green">Green</button>
+    <button class="buttons blue">Blue</button>
+    <button class="buttons red">Red</button>
+    <button class="buttons gray">Gray</button>
+    <button class="buttons black">Black</button>
+</body>
+</html>
