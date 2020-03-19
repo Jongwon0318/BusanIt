@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.person.person">
+
+<sql id="searchCondition">
+	<where>
+		<if test='word!=null and field=="name"'>
+			name like '%'||#{word}||'%'
+		</if>
+		<if test='word!=null and field=="job"'>
+			job like '%'||#{word}||'%'
+		</if>
+	</where>
+</sql>
+
+	<insert id="insert" parameterType="com.person.vo.PersonVO">
+		INSERT INTO PERSON VALUES ( #{id}, #{password}, #{name}, #{gender}, #{job})
+	</insert>
+	
+	<select id="list" resultType="com.person.vo.PersonVO">
+		SELECT * FROM PERSON
+		<include refid="searchCondition"></include>
+	</select>
+	
+	<!-- <select id="searchList" resultType="com.person.vo.PersonVO" parameterType="java.util.HashMap" > -->
+	<!-- 	SELECT * FROM PERSON WHERE ${field} LIKE '%'||#{word}||'%'-->
+	<!-- </select>-->
+	
+	
+	<select id="detail" resultType="com.person.vo.PersonVO">
+		SELECT * FROM PERSON WHERE id = #{id}
+	</select>
+	<update id="update" parameterType="com.person.vo.PersonVO">
+		UPDATE PERSON SET password=#{password}, name=#{name}, gender=#{gender}, job=#{job} WHERE ID=#{id}
+	</update>
+	<delete id="delete" parameterType="com.person.vo.PersonVO">
+		DELETE FROM PERSON WHERE ID=#{id}
+	</delete>
+	
+	<select id="count" resultType="int">
+		SELECT COUNT(*) FROM PERSON
+		<include refid="searchCondition"></include>
+	</select>
+	
+	<!--  <select id="searchCount" resultType="int">  -->
+		<!-- SELECT COUNT(*) FROM PERSON WHERE ${field} LIKE '%'||#{word}||'%' -->
+	<!-- </select> -->
+</mapper>

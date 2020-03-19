@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+ 
+	<mapper namespace="com.person.config.Person">
+	<!-- Insert -->
+	<insert id="pInsert" parameterType="pvo">
+		INSERT INTO PERSON VALUES (#{id},#{password},#{name},#{gender},#{job})
+	</insert>
+	
+	<!-- List -->
+	<select id="pList" resultType="pvo">
+		SELECT * FROM PERSON
+	</select>
+	
+	<!-- Detail -->
+	<select id="pDetail" resultType="pvo">
+		SELECT * FROM PERSON WHERE ID=#{id}
+	</select>
+	
+	<!-- Update -->
+	<update id="pUpdate" parameterType="pvo">
+		UPDATE PERSON SET password=#{password}, name=#{name}, gender=#{gender}, job=#{job} WHERE ID=#{id}
+	</update>
+	
+	<!-- Delete -->
+	<delete id="pDelete" parameterType="pvo">
+		DELETE FROM PERSON WHERE ID=#{id}
+	</delete>
+	
+	</mapper>

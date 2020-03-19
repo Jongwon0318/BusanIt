@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- java 패키지 경로와 같은 경로에 생성 -->
+<!-- GuestMapper.java 의 메소드를 id로 불러오면 됨 -->
+<!-- parametertype을 따로 주지 않아도 해당 메소드에서 알아서 불러와줌 -->
+<mapper namespace="com.myapp.mapper.BoardMapper">
+
+	<sql id="search">
+		<if test="word!=null">
+			<if test="word!=''">
+				<where>
+					${field} LIKE '%'||#{word}||'%'
+				</where>
+			</if>
+		</if>
+	</sql>
+
+	<insert id="insert">
+		INSERT INTO SPRINGBOARD
+		VALUES (SPRINGBOARD_SEQ.NEXTVAL,#{title},#{content},#{writer},SYSDATE,0,#{password})
+	</insert>
+
+	<select id="list" resultType="com.myapp.model.BoardVO">
+		select * from
+								(select rownum rnum, aa.* from
+																							(select * from SPRINGBOARD
+																							<include refid="search"/>
+																							order by num desc)aa)
+		where rnum between #{startRow} and #{endRow}
+		order by num desc
+	</select>
+	
+	<select id="count" resultType="int">
+		SELECT COUNT(*) FROM SPRINGBOARD
+		<include refid="search"/>
+	</select>
+	
+	<select id="detail" resultType="com.myapp.model.BoardVO">
+		SELECT * FROM SPRINGBOARD WHERE NUM=#{num}
+	</select>
+	
+	<delete id="delete">
+		DELETE FROM SPRINGBOARD WHERE NUM=#{num}
+	</delete>
+	
+	<update id="update">
+		UPDATE SPRINGBOARD SET TITLE=#{title}, CONTENT=#{content} WHERE NUM=#{num}
+	</update>
+	
+	<!-- 조회수 -->
+	<update id="hitCount">
+		UPDATE SPRINGBOARD SET HITCOUNT=HITCOUNT+1 WHERE NUM=#{num}
+	</update>
+</mapper>

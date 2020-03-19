@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<!-- test -->
+	<bean name="/test.sp" class="com.testController.TestController"/>
+	
+	<!-- Go to PersonForm -->
+	<bean name="/personForm.sp" class="com.person.controller.PersonForm"/>
+	
+	<!-- DB Setting -->
+	<bean id="ds" class="org.springframework.jndi.JndiObjectFactoryBean">
+		<property name="jndiName">
+			<value>jdbc/spring</value>
+		</property>
+		<property name="resourceRef" value="true"></property>
+	</bean>
+	
+	<!-- template -->
+	<bean id="template" class="org.springframework.jdbc.core.JdbcTemplate">
+		<property name="dataSource" ref="ds"></property>
+	</bean>
+	
+	<!-- dao -->                                                                                                                                                                                                                                                                                                                                    
+	<bean id="dao" class="com.person.model.PersonDAOImpl">
+		<property name="template" ref="template"></property>
+	</bean>
+
+	<!-- Insert Person -->
+	<bean name="/personInsert.sp" class="com.person.controller.PersonInsert">
+		<property name="dao" ref="dao"></property>
+	</bean>
+	
+	<!-- Person List -->
+	<bean name="/personList.sp" class="com.person.controller.PersonList">
+		<property name="dao" ref="dao"></property>
+	</bean>
+	
+	<!-- Person View -->
+	<bean name="/personView.sp" class="com.person.controller.PersonView">
+		<property name="dao" ref="dao"></property>
+	</bean>
+	
+	<!--  Person Update -->
+	<bean name="/personUpdate.sp" class="com.person.controller.PersonUpdate">
+		<property name="dao" ref="dao"></property>
+	</bean>
+	
+	<!-- Person Delete -->
+	<bean name="/personDelete.sp" class="com.person.controller.PersonDelete">
+		<property name="dao" ref="dao"></property>
+	</bean>
+	
+</beans>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+  <mapper namespace="com.member.config.Member">
+  	
+  	<!-- insert -->
+  	<insert id="insertData" parameterType="com.member.model.MemberVO">
+  		INSERT INTO SPRINGMEMBER (ID, PASS, NAME, ADDR, MEMO, REG_DATE)
+  		VALUES( #{id}, #{pass}, #{name}, #{addr}, #{memo}, SYSDATE )
+  	</insert>
+  	
+  	<!-- select list -->
+  	<select id="listData" resultType="com.member.model.MemberVO">
+  		SELECT * FROM SPRINGMEMBER
+  	</select>
+  	
+  	<!-- select detail -->
+  	<select id="selectOneData" resultType="com.member.model.MemberVO">
+  		SELECT * FROM SPRINGMEMBER WHERE ID=#{id}
+  	</select>
+  	
+  	<!-- update -->
+  	<update id="updateData" parameterType="com.member.model.MemberVO">
+  		UPDATE SPRINGMEMBER SET  PASS=#{pass}, NAME=#{name}, ADDR=#{addr}, MEMO=#{memo} WHERE ID=#{id}
+  	</update>
+  	
+  	<!-- delete -->
+  	<delete id="deleteData" parameterType="com.member.model.MemberVO">
+  		DELETE FROM SPRINGMEMBER WHERE ID=#{id}
+  	</delete>
+   
+  </mapper>
