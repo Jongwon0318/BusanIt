@@ -25,4 +25,16 @@ public interface BoardDAO {
 	
 	//Á¶È¸¼ö
 	public int dao_hitCount(int num);
+	
+	//´ñ±ÛÃß°¡
+	public void dao_addComment(CommentVO comment);
+	
+	//´ñ±Û¸ñ·Ï
+	public List<CommentVO> dao_getComments(int bnum);
+	
+	//´ñ±Û»èÁ¦
+	public void dao_commentDelete(int cnum);
+	
+	//´ñ±Û¹ÝÈ¯
+	public CommentVO dao_commentDetail(int cnum);
 }

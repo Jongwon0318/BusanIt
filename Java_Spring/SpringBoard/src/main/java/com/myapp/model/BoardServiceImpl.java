@@ -47,5 +47,25 @@ public class BoardServiceImpl implements BoardService{
 	public int hitCount(int num) {
 		return dao.dao_hitCount(num);
 	}
+
+	@Override
+	public void addComment(CommentVO comment) {
+		dao.dao_addComment(comment);
+	}
+
+	@Override
+	public List<CommentVO> getComments(int bnum) {
+		return dao.dao_getComments(bnum);
+	}
+
+	@Override
+	public void commentDelete(int cnum) {
+		dao.dao_commentDelete(cnum);		
+	}
+
+	@Override
+	public CommentVO commentDetail(int cnum) {
+		return dao.dao_commentDetail(cnum);
+	}
 	
 }

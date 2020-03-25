@@ -49,4 +49,24 @@ public class BoardDAOImpl implements BoardDAO{
 	public int dao_hitCount(int num) {
 		return mapper.hitCount(num);
 	}
+
+	@Override
+	public void dao_addComment(CommentVO comment) {
+		mapper.addComment(comment);		
+	}
+
+	@Override
+	public List<CommentVO> dao_getComments(int bnum) {
+		return mapper.getComments(bnum);
+	}
+
+	@Override
+	public void dao_commentDelete(int cnum) {
+		mapper.commentDelete(cnum);
+	}
+
+	@Override
+	public CommentVO dao_commentDetail(int cnum) {
+		return mapper.commentDetail(cnum);
+	}
 }

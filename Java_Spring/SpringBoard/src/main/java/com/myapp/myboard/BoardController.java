@@ -3,6 +3,7 @@ package com.myapp.myboard;
 import java.util.HashMap;
 import java.util.List;
 
+import org.json.simple.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -13,6 +14,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.myapp.model.BoardServiceImpl;
 import com.myapp.model.BoardVO;
+import com.myapp.model.CommentVO;
 import com.myapp.util.PageAction;
 
 
@@ -73,6 +75,11 @@ public class BoardController {
 	public String detail(Model model,int num) {
 		service.hitCount(num);
 		model.addAttribute("detail",service.detail(num));
+		
+		int bnum=num;
+		List<CommentVO> commentList=service.getComments(bnum);
+		model.addAttribute("commentList",commentList);
+		
 		return "detail";
 	}
 	
@@ -105,4 +112,37 @@ public class BoardController {
 			return "false";
 		}
 	}
+
+	@PostMapping("addComment")
+	@ResponseBody
+	public Object addComment(CommentVO comment, int bnum) {
+		service.addComment(comment);
+		
+		List<CommentVO> commentList=service.getComments(bnum);
+				
+		return commentList;
+	}
+	
+	@GetMapping("commentDelete")
+	public void commentDeleteForm(Model model, int cnum, int bnum) {
+		model.addAttribute("cnum",cnum);
+		model.addAttribute("bnum",bnum);
+	}
+	
+	@PostMapping("commentPassCheck")
+	@ResponseBody
+	public String commentPassCheck(int cnum, String password) {
+		if(service.commentDetail(cnum).getPassword().equals(password)) {
+			return "true";
+		}else {
+			return "false";
+		}
+	}
+
+	@PostMapping("commentDelete")
+	@ResponseBody
+	public void deleteComment(int cnum) {
+		service.commentDelete(cnum);
+	}
+	
 }

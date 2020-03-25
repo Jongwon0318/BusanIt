@@ -53,4 +53,27 @@
 	<update id="hitCount">
 		UPDATE SPRINGBOARD SET HITCOUNT=HITCOUNT+1 WHERE NUM=#{num}
 	</update>
+	
+	<!-- 댓글달기 -->
+	<insert id="addComment">
+		INSERT INTO SPRINGBOARDCOMMENT VALUES (#{bnum}, SPRINGBOARD_COMMENT_SEQ.NEXTVAL, #{writer}, #{content}, SYSDATE, #{password})
+	</insert>
+	
+	<!-- 댓글불러오기 -->
+	<select id="getComments" resultType="com.myapp.model.CommentVO">
+		SELECT CNUM, ROWNUM CNUM_1,WRITER,CONTENT,REGDATE,PASSWORD 
+		FROM SPRINGBOARDCOMMENT 
+		WHERE BNUM=#{bnum}
+		ORDER BY CNUM ASC
+	</select>
+	
+	<!-- 댓글삭제하기 -->
+	<delete id="commentDelete">
+		DELETE FROM SPRINGBOARDCOMMENT WHERE CNUM=#{cnum}
+	</delete>
+	
+	<!-- 댓글객체 반환 -->
+	<select id="commentDetail" resultType="com.myapp.model.CommentVO">
+		SELECT * FROM SPRINGBOARDCOMMENT WHERE CNUM=#{cnum}
+	</select>
 </mapper>

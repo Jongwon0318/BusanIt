@@ -64,7 +64,39 @@
 			<input class="btn btn-dark" type="button" value="Delete" id="delete">
 			<input class="btn btn-dark" type="button" value="List" id="list">
 		</div>
+		<br>
 		<hr>
+		<div align="center">
+			<form>
+				<input type="text" id="commentWriter" name="commentWriter" class="form-control-sm" size=30 placeholder="작성자(이름)">&nbsp;
+				<input type="text" id="commentContent" name="commentContent" class="form-control-sm" size=90 placeholder="내용">&nbsp;
+				<input type="password" id="commentPassword" name="commentPassword" class="form-control-sm" size=20 placeholder="비밀번호">&nbsp;
+				<input type="button" id="addComment" class="btn-m btn-dark" value="Comment">
+			</form>
+			<br><br>
+			<table class="table text-center" id="commentTable">
+				<tr>
+					<th>번호</th>
+					<th>작성자</th>
+					<th>내용</th>
+					<th>작성일</th>
+					<th>삭제</th>
+				</tr>
+				<c:forEach items="${commentList }" var="comment">
+					<tr>
+						<td>${comment.cnum_1 }</td>
+						<td>${comment.writer }</td>
+						<td>${comment.content }</td>
+						<td>${comment.regdate }</td>
+						<td>
+						<input type="button" id="commentDelete" value="삭제" class="btn btn-dark">
+						<input type="hidden" id="commentNum" value="${comment.cnum }">
+						<input type="hidden" id="boardNum" value="${detail.num }">
+						</td>
+					</tr>
+				</c:forEach>
+			</table>
+		</div>
 	</div>
 	<input type="hidden" id="num" value="${detail.num }">
 </body>
@@ -83,5 +115,65 @@
 	$("#delete").click(function(){
 		window.open("delete","Delete","width=500,height=200");
 	})
+	
+	$("#commentTable").on('click','#commentDelete',function(){
+		var curRow=$(this).closest("tr");
+		var selectedCnum=curRow.find("#commentNum").val();
+		var deleteWindow=window.open("commentDelete?cnum="+selectedCnum+"&&bnum=${detail.num }","CommentDelete","width=700,height=200");
+	})
+	
+	$("#addComment").click(function(){
+		var bnum=${detail.num };
+		var writer=$("#commentWriter").val();
+		var content=$("#commentContent").val();
+		var password=$("#commentPassword").val();
+		$.ajax({
+			url:"addComment",
+			type:"POST",
+			data:{"bnum":bnum,"writer":writer,"content":content,"password":password,"bnum":bnum},
+			success:function(data){
+				$("#commentTable").empty();
+				$("#commentTable").append("<tr><th>번호</th><th>작성자</th><th>내용</th><th>작성일</th><th>삭제</th></tr>")
+				var htmlStr="";
+				for(i=0; i<data.length; i++){
+					htmlStr+="<tr>";
+					htmlStr+="<td>"+data[i].cnum_1+"</td>";
+					htmlStr+="<td>"+data[i].writer+"</td>";
+					htmlStr+="<td>"+data[i].content+"</td>";
+					htmlStr+="<td>"+data[i].regdate+"</td>";
+					htmlStr+="<td>";
+					htmlStr+="<input type='button' id='commentDelete' value='삭제' class='btn btn-dark'>";
+					htmlStr+="<input type='hidden' id='commentNum' value="+data[i].cnum_1+">";
+					htmlStr+="<input type='hidden' id='boardNum' value="+${detail.num }+">";
+					htmlStr+="</td>";
+					htmlStr+="</tr>";
+				}
+				$("#commentTable").append(htmlStr);
+				$("#commentWriter").val("");
+				$("#commentContent").val("");
+				$("#commentPassword").val(""); 
+			},
+			beforeSend:nullCheck,
+			error:function(e){
+				alert("error:"+e)
+			}
+		})
+	})
+	
+	function nullCheck(){
+		if(!$("#commentWriter").val()){
+			alert("댓글작성자를 입력하세요");
+			return false;
+		}
+		if(!$("#commentContent").val()){
+			alert("댓글내용을 입력하세요");
+			return false;
+		}
+		if(!$("#commentPassword").val()){
+			alert("댓글 비밀번호를 입력하세요");
+			return false;
+		}
+		return true;
+	}
 </script>
 </html>

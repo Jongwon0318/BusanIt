@@ -25,4 +25,16 @@ public interface BoardService {
 	
 	//Á¶È¸¼ö
 	public int hitCount(int num);
+	
+	//´ñ±ÛÃß°¡
+	public void addComment(CommentVO comment);
+	
+	//´ñ±Û¸ñ·Ï
+	public List<CommentVO> getComments(int bnum);
+	
+	//´ñ±Û»èÁ¦
+	public void commentDelete(int cnum);
+	
+	//´ñ±Û¹ÝÈ¯
+	public CommentVO commentDetail(int cnum);
 }
