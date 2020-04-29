@@ -18,15 +18,6 @@
 
     <!-- Default set of monitored resources. If one of these changes, the    -->
     <!-- web application will be reloaded.                                   -->
-    <Resource  name="jdbc/spring" 
-    	auth="Container"
-		type="javax.sql.DataSource"
-		driverClassName="oracle.jdbc.OracleDriver"
-		url="jdbc:oracle:thin:@localhost:1521:xe"
-		username="hr"  password="1234"
-		maxTotal="20"  maxIdle="10"
-		maxWaitMillis="-1"
-	/>
     <WatchedResource>WEB-INF/web.xml</WatchedResource>
     <WatchedResource>WEB-INF/tomcat-web.xml</WatchedResource>
     <WatchedResource>${catalina.base}/conf/web.xml</WatchedResource>
